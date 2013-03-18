@@ -1,0 +1,9 @@
+Programming takes practice, and homework, in addition to your projects is just directed practice. It will be graded, but what is of real importance is what you learn while doing the homework. It has been said that it takes 10,000 hours to gain world class skill at something. In the case of programming it takes several hundred hours to get comfortable enough to start solving real world challenges fairly quickly. Therefore, use the homework as a minimum. Challenge yourself. Once you have completed a challenging task the next step is to see if you can do it better, or differently. In terms of a grade, each homework will be graded for up to 10 points, and all together will count for a significant portion of your grade. That being said, it is more important that you learn as much as possible during this class than it is to just get perfect score. If you are having difficulties either with a current assignment or in finding substantive challenges, please let me know.
+
+Suggested Challenges:
+HW1-5 Secret Word Game
+1) Can you implement the word game using different looping constucts? while, for, until, each, map etc....
+2) Using Classes?
+3) Using lambda, or Proc
+4) Passing blocks and using yield
+5) Using threads for multiple players <- For the seriously hardcore
