@@ -42,3 +42,12 @@
 # Student Solution
 #
 ###############################################################################
+
+# Hi, my name is Sanders, and I am excited to learn more about Rails
+
+puts "Welcome to the Secret Number Game!"
+
+first_name = "Sanders"
+last_name = "Kleinfeld"
+
+puts "Created by " + first_name + " " + last_name
