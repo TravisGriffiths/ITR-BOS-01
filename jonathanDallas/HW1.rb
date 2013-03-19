@@ -42,3 +42,27 @@
 # Student Solution
 #
 ###############################################################################
+
+# Jonathan Dallas is a front end web developer
+
+puts "Welcome to the Secret Number Game!"
+
+first_name = "Jonathan"
+last_name = "Dallas"
+
+puts ""
+puts "Created by " + first_name + " " + last_name
+puts ""
+puts "Enter a number between 1 and 10"
+number = rand(1..10)
+guess = gets.to_i
+
+if number == guess
+	puts "Yay you guessed correctly"
+else
+	puts "sorry the number was - " + number.to_s
+end
+
+
+
+
