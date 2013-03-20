@@ -42,33 +42,21 @@
 # Student Solution
 #
 ###############################################################################
-
-# Jonathan Dallas is a front end web developer
-
-puts "Welcome to the Secret Number Game!"
-
-first_name = "Jonathan"
-last_name = "Dallas"
-
-puts ""
-puts "Created by " + first_name + " " + last_name
-puts ""
-# create a random number from 1 to 10
-number = rand(1..10)
-# prompt the user to type a number between 1 and 10
-puts "Enter a number between 1 and 10"
-# get the number entered from the user
-guess = gets.to_i
-
-# if the user's number matches the random number
-if number == guess
-	# tell them they guessed correctly
-	puts "Yay you guessed correctly"
+# this is the first assignment in Ruby on Rails class
+puts "Hello and Welcome to the Secret Number Game!"
+first_name = "Maryann"
+last_name = "Hondo"
+puts "this game was created by" + first_name + " " + last_name + " "
+print "to play the game, pick a number between 1 & 20 and hit enter "
+#this is where we get the number
+iguess = gets.to_i
+rnum = [1...20]
+newrandom = rand (20)
+#this is where we compare the two
+if ( rnum[newrandom] != iguess)
+puts "wrong number try again!"
 else
-	# otherwise tell them what the number was supposed to be
-	puts "sorry the number was - " + number.to_s
+puts "you got it!"
 end
-
-
-
+puts "the end"
 
