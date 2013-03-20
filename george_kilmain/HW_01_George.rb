@@ -1,3 +1,8 @@
+#!/usr/bin/ruby
+###############################################################################
+#
+# Introduction to Ruby on Rails
+#
 # HW 01
 #
 # Purpose:
@@ -43,11 +48,15 @@
 #
 ###############################################################################
 
-# Hi, my name is Sanders, and I am excited to learn more about Rails
+# Created by George Kilmain
+# Entrepreneur
 
-puts "Welcome to the Secret Number Game!"
+homeMessage = "Welcome to the Secret Number Game"
+puts homeMessage
 
-first_name = "Sanders"
-last_name = "Kleinfeld"
+firstName = "George"
+lastName = "Kilmain"
 
-puts "Created by " + first_name + " " + last_name
+puts "Created by"+firstName+" "+lastName
+
+# This is my first homework assignment
