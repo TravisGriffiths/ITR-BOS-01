@@ -42,3 +42,19 @@
 # Student Solution
 #
 ###############################################################################
+#Hi, my name is Leon Noel
+print "Welcome to the Secret Number Game!"
+
+first_name = "leon"
+last_name = "noel"
+
+print "Created by" + first_name + "" + last_name
+
+
+
+
+
+
+
+
+
