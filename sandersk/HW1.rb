@@ -42,19 +42,12 @@
 # Student Solution
 #
 ###############################################################################
-#Hi, my name is Leon Noel
-print "Welcome to the Secret Number Game!"
 
-first_name = "leon"
-last_name = "noel"
+# Hi, my name is Sanders, and I am excited to learn more about Rails
 
-print "Created by" + first_name + "" + last_name
+puts "Welcome to the Secret Number Game!"
 
+first_name = "Sanders"
+last_name = "Kleinfeld"
 
-
-
-
-
-
-
-
+puts "Created by " + first_name + " " + last_name

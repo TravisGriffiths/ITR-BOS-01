@@ -1,3 +1,8 @@
+#!/usr/bin/ruby
+###############################################################################
+#
+# Introduction to Ruby on Rails
+#
 # HW 01
 #
 # Purpose:
@@ -42,19 +47,16 @@
 # Student Solution
 #
 ###############################################################################
-#Hi, my name is Leon Noel
-print "Welcome to the Secret Number Game!"
 
-first_name = "leon"
-last_name = "noel"
+# Created by George Kilmain
+# Entrepreneur
 
-print "Created by" + first_name + "" + last_name
+homeMessage = "Welcome to the Secret Number Game"
+puts homeMessage
 
+firstName = "George"
+lastName = "Kilmain"
 
+puts "Created by"+firstName+" "+lastName
 
-
-
-
-
-
-
+# This is my first homework assignment

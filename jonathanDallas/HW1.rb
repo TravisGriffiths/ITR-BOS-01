@@ -42,18 +42,32 @@
 # Student Solution
 #
 ###############################################################################
-#Hi, my name is Leon Noel
-print "Welcome to the Secret Number Game!"
 
-first_name = "leon"
-last_name = "noel"
+# Jonathan Dallas is a front end web developer
 
-print "Created by" + first_name + "" + last_name
+puts "Welcome to the Secret Number Game!"
 
+first_name = "Jonathan"
+last_name = "Dallas"
 
+puts ""
+puts "Created by " + first_name + " " + last_name
+puts ""
+# create a random number from 1 to 10
+number = rand(1..10)
+# prompt the user to type a number between 1 and 10
+puts "Enter a number between 1 and 10"
+# get the number entered from the user
+guess = gets.to_i
 
-
-
+# if the user's number matches the random number
+if number == guess
+	# tell them they guessed correctly
+	puts "Yay you guessed correctly"
+else
+	# otherwise tell them what the number was supposed to be
+	puts "sorry the number was - " + number.to_s
+end
 
 
 
