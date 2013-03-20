@@ -1,3 +1,5 @@
+#!/usr/local/rvm/rubies/ruby-1.9.3-p194/bin/ruby
+
 # HW 01
 #
 # Purpose:
@@ -14,7 +16,7 @@
 # 2. Read this Introduction to Programming
 # 	 http://en.wikiversity.org/wiki/Introduction_to_Programming/About_Programming
 #
-# 3. In this file under "Student Solution," print the welcome text of your Secret 
+# 3. In this file under "Student Solution," print the welcome text of your Secret
 #    Number Game
 #
 #	(i.e.) "Welcome to the Secret Number Game!"
@@ -42,3 +44,12 @@
 # Student Solution
 #
 ###############################################################################
+
+#Secret Number Game - Katherine L
+print "Welcome to the Secret Number Game!"
+
+first_name = "Katherine"
+last_name = "LeVine"
+
+print "\nCreated by " + first_name + " " + last_name + "\n"
+
