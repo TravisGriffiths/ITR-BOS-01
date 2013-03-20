@@ -1,5 +1,8 @@
-#!/usr/local/rvm/rubies/ruby-1.9.3-p194/bin/ruby
-
+#!/usr/bin/ruby
+###############################################################################
+#
+# Introduction to Ruby on Rails
+#
 # HW 01
 #
 # Purpose:
@@ -16,7 +19,7 @@
 # 2. Read this Introduction to Programming
 # 	 http://en.wikiversity.org/wiki/Introduction_to_Programming/About_Programming
 #
-# 3. In this file under "Student Solution," print the welcome text of your Secret
+# 3. In this file under "Student Solution," print the welcome text of your Secret 
 #    Number Game
 #
 #	(i.e.) "Welcome to the Secret Number Game!"
@@ -45,11 +48,15 @@
 #
 ###############################################################################
 
-#Secret Number Game - Katherine L
-print "Welcome to the Secret Number Game!"
+# Created by George Kilmain
+# Entrepreneur
 
-first_name = "Katherine"
-last_name = "LeVine"
+homeMessage = "Welcome to the Secret Number Game"
+puts homeMessage
 
-print "\nCreated by " + first_name + " " + last_name + "\n"
+firstName = "George"
+lastName = "Kilmain"
 
+puts "Created by"+firstName+" "+lastName
+
+# This is my first homework assignment
