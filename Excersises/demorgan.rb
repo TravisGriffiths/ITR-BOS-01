@@ -23,13 +23,13 @@
 
 
 puts "Evaluating DeMorgans"
-a, b, c= [true, false], [true, false], [true, false]
+a = b = c = [true, false]
 
 for i in a do
 	for j in b do
 		for k in c do
 			if((i and j or k) != (not i or not j and not k)) #These should always evaluate to the other boolean, thus !=
-				puts "Different"
+				puts "Different" #should always see this
 			else
 				puts "Same: I - #{i}, J - #{j}, K - #{k}" #Should never see this
 			end
