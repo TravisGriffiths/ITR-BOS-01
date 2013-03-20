@@ -77,7 +77,7 @@ usr_name = gets.chomp
 
 puts "Hello, #{usr_name}! You have three chances to guess my secret number between 1 and 10."
 
-secret_number = 5#rand(1-10)
+secret_number = rand(1-10)
 guesses_left = 3
 
 while guesses_left != 0
