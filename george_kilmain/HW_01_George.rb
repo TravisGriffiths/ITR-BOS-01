@@ -57,7 +57,6 @@ puts homeMessage
 firstName = "George"
 lastName = "Kilmain"
 
-def fullName
 puts "Created by"+firstName+" "+lastName
 
 # This is my first homework assignment
