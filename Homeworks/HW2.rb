@@ -64,3 +64,22 @@
 #
 ###############################################################################
 
+
+###############################################################################
+#
+# Stretch Exercises: These are not required but are to challenge you.
+#
+###############################################################################
+#
+# 1. Take a look at: http://simpleror.wordpress.com/2009/03/15/q-q-w-w-x-r-s/
+#    Use the %Q and %q operator in your solution
+#
+# 2. Modify your solution to use nested conditionals
+# 
+# 3. Modify your solution to use a compound conditional
+#
+# 4. Toggle all of your if to unless and vice versa
+#
+# 5. Modify the input to deal with nonsensical input i.e. 'jello'
+###############################################################################
+
