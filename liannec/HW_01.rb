@@ -1,4 +1,7 @@
-#!/Users/jparshley/.rvm/rubies/ruby-1.9.3-p392/bin/ruby
+###############################################################################
+#
+# Introduction to Ruby on Rails
+#
 # HW 01
 #
 # Purpose:
@@ -42,20 +45,5 @@
 #
 # Student Solution
 #
-############################################################################### =>
+###############################################################################
 
-# Hello all I am Joey Parshley 
-puts"Welcome to the Secret Number Game"
-
-# Create two variables, one to hold my first name and one to hold my last name
-first_name = "Joey"
-last_name = "Parshley"
-
-# Print out to screen the message telling the user that this was created by me
-# Done by concatenating the Strings with the values of the variables created up above
-puts "Created by " + first_name + " " + last_name
-
-
-
-
- 

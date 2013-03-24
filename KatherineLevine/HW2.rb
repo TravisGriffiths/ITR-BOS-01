@@ -12,11 +12,11 @@
 #
 ###############################################################################
 #
-# 1. Welcome users to your game. Let them know you are the creator. 
+# 1. Welcome users to your game. Let them know you are the creator.
 #
 # 2. Ask the user for their name and store it in a variable.
 #
-# 3. Personally greet the player by printing to the screen, "Hi player_name! 
+# 3. Personally greet the player by printing to the screen, "Hi player_name!
 #	 Let them know they have 3 guesses to guess the Secret Number between 1 and 10.
 #
 # 4. Create a new Integer variables called `guesses_left`, this will count
@@ -33,13 +33,13 @@
 #
 # 7. Ask the Player to make their first guess. (Remember to cast input from the Player into the appropriate
 #    data type).
-#    
+#
 # 8.  Use a Conditional to find out if the Player has guessed the
 #     correct number.
 #
 #     1. If they guessed correctly, tell them they won and exit the
 #        script.
-#	
+#
 #	  2. For an incorrect guess decrement the variable `guesses_left` by 1 and
 #     print to the screen how many guesses the Player has left.
 #
@@ -48,7 +48,7 @@
 #
 #     		2. If they guessed a number too high, tell them that they need to
 #        	   guess lower on their next guess.
-#		
+#
 # 9. Repeat the above process for a total of 3 times asking the Player
 #     to make a guess and verify if the Player won.
 #
@@ -64,22 +64,33 @@
 #
 ###############################################################################
 
+#Secret Number Game - Katherine L
+puts "Welcome to the Secret Number Game!"
 
-###############################################################################
-#
-# Stretch Exercises: These are not required but are to challenge you.
-#
-###############################################################################
-#
-# 1. Take a look at: http://simpleror.wordpress.com/2009/03/15/q-q-w-w-x-r-s/
-#    Use the %Q and %q operator in your solution
-#
-# 2. Modify your solution to use nested conditionals
-# 
-# 3. Modify your solution to use a compound conditional
-#
-# 4. Toggle all of your if to unless and vice versa
-#
-# 5. Modify the input to deal with nonsensical input i.e. 'jello'
-###############################################################################
+first_name = "Katherine"
+last_name = "LeVine"
 
+puts "Created by " + first_name + " " + last_name
+
+puts "What is your name?"
+usr_name = gets.chomp
+
+puts "Hello, #{usr_name}! You have three chances to guess my secret number between 1 and 10."
+
+secret_number = rand(1-10)
+guesses_left = 3
+
+while guesses_left != 0
+  puts "Take a guess!"
+  guess = Integer(gets.chomp)
+  if guess == secret_number
+    puts "Congratulations! You guessed my number! My number was #{secret_number}."
+    guesses_left = 0
+  elsif guess > secret_number
+    puts "Your guess is too high!"
+    puts "You have #{guesses_left -= 1} guesses left."
+  else guess < secret_number
+    puts "Your guess is too low!"
+    puts "You have #{guesses_left -= 1} guesses left."
+  end
+end

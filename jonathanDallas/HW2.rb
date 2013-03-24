@@ -1,3 +1,5 @@
+#!C:/RailsInstaller/Ruby-1.9.3-p327/bin/ruby
+
 ###############################################################################
 #
 # Introduction to Ruby on Rails
@@ -64,22 +66,40 @@
 #
 ###############################################################################
 
+puts "\nWelcome to the Secret Number Game!"
+puts "\nHey Bob, who's our first player?"
+print "name: "
+# get the players name
+name = gets.chomp
+# greet the player
+puts "\nHi #{name}, welcome to the game"
+# set the number of guess allowed
+guesses_allowed = 3
+# create a random number from 1 to 10
+number = rand(1..10)
 
-###############################################################################
-#
-# Stretch Exercises: These are not required but are to challenge you.
-#
-###############################################################################
-#
-# 1. Take a look at: http://simpleror.wordpress.com/2009/03/15/q-q-w-w-x-r-s/
-#    Use the %Q and %q operator in your solution
-#
-# 2. Modify your solution to use nested conditionals
-# 
-# 3. Modify your solution to use a compound conditional
-#
-# 4. Toggle all of your if to unless and vice versa
-#
-# 5. Modify the input to deal with nonsensical input i.e. 'jello'
-###############################################################################
+puts "\nIn #{guesses_allowed} tries can you figure out the number, between 1 and 10 that I'm thinking of?"
+
+for i in 1..guesses_allowed
+	print "guess #{i}:"
+
+	# get the number entered from the user
+	guess = gets.chomp.to_i
+
+	# if the user's number matches the random number
+	if number == guess
+		# tell them they guessed correctly
+		puts "\nCongratulation #{name} you just won a sense of accomplishment"
+		success=true
+		break;
+	elsif number < guess
+		# otherwise tell them what the number was supposed to be
+		puts "\nToo High"
+	elsif number > guess
+		# otherwise tell them what the number was supposed to be
+		puts "\nToo Low"
+	end
+end
+
+puts "sorry the number was #{number}" if(!success)
 

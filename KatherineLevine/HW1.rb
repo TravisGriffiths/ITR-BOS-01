@@ -46,10 +46,10 @@
 ###############################################################################
 
 #Secret Number Game - Katherine L
-print "Welcome to the Secret Number Game!"
+puts "Welcome to the Secret Number Game!"
 
 first_name = "Katherine"
 last_name = "LeVine"
 
-print "\nCreated by " + first_name + " " + last_name + "\n"
+puts "Created by " + first_name + " " + last_name
 
