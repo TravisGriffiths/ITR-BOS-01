@@ -1,5 +1,3 @@
-#!C:/RailsInstaller/Ruby-1.9.3-p327/bin/ruby
-
 ###############################################################################
 #
 # Introduction to Ruby on Rails
@@ -65,41 +63,63 @@
 # Student's Solution
 #
 ###############################################################################
-
-puts "\nWelcome to the Secret Number Game!"
-puts "\nHey Bob, who's our first player?"
-print "name: "
-# get the players name
-name = gets.chomp
-# greet the player
-puts "\nHi #{name}, welcome to the game"
-# set the number of guess allowed
-guesses_allowed = 3
-# create a random number from 1 to 10
-number = rand(1..10)
-
-puts "\nIn #{guesses_allowed} tries can you figure out the number, between 1 and 10 that I'm thinking of?"
-
-for i in 1..guesses_allowed
-	print "guess #{i}:"
-
-	# get the number entered from the user
-	guess = gets.chomp.to_i
-
-	# if the user's number matches the random number
-	if number == guess
-		# tell them they guessed correctly
-		puts "\nCongratulation #{name} you just won a sense of accomplishment"
-		success=true
-		break;
-	elsif number < guess
-		# otherwise tell them what the number was supposed to be
-		puts "\nToo High"
-	elsif number > guess
-		# otherwise tell them what the number was supposed to be
-		puts "\nToo Low"
+#
+# this is the second assignment in Ruby on Rails class
+# let's introduce ourselves....
+puts "Hello and Welcome to the Secret Number Game!"
+first_name = "Maryann"
+last_name = "Hondo"
+puts "this game was created by " + first_name + " " + last_name + " "
+#
+# setting up the rules to play
+#
+puts "to play any game, there are rules --"
+counter=3
+puts "Rule 1: you will get 3 tries to guess a number between 1 and 10"
+puts "before we play the game, I'd like to know your name-"
+puts "What is your name?"
+player_name= gets.chomp
+#
+#this is where we get the first number
+#
+current_guess = 0
+#
+#this is where we set the number of guesses
+#
+guesses_left= 3
+#
+#this is where we get our number
+#
+secret_number = rand (10)
+#
+# Let's get started!!!
+#
+print player_name + "- type a number between 1 & 10 and hit enter "
+while  counter > 0
+	current_guess = gets.to_i
+	#
+	#   this is where we compare the two
+	#
+	if (secret_number != current_guess) 
+		guesses_left -= 1
+		if (secret_number > current_guess) 
+			if (guesses_left > 0) 
+				puts "wrong number  #{player_name}, try a higher number you have #{guesses_left} more tries, try again!"
+			else
+				puts "sorry #(player_name} you have run out of tries!"
+			end
+		else 
+			if (guesses_left > 0)
+				puts "wrong number, try a lower number  #{player_name}, you have #{guesses_left} more tries,  try again!"
+			else
+				puts "sorry #{player_name} you have run out of tries!"
+				counter = 0
+			end
+			counter -= 1
+		end
+	else 
+		puts "you got it! the number was #{secret_number} "
+		counter = 0
 	end
 end
-
-puts "sorry the number was #{number}" if(!success)
-
+puts "this is the end of our game, please come back and play again"
