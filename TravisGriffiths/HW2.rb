@@ -63,55 +63,8 @@
 # Student's Solution
 #
 ###############################################################################
-puts "Welcome to my game. I am Leon"
 
-puts "What is your name?"
-name = $stdin.gets.chomp
 
-puts "Hi player #{name}, you have have 3 guesses to guess the Secret Number between 1 and 10."
-
-guesses_left = 3
-
-puts "You have #{guesses_left} guesses left"
-
-secret_number = 5
-
-puts "Make your first guess"
-guess = $stdin.gets.chomp.to_i
-
-if guess == secret_number
-  puts "You won!"
-  abort("Congrats!")
-else
-	guesses_left-=1
-  puts "Wrong! You have #{guesses_left} guesses left"
-end
-
-puts "Make your second guess"
-guess = $stdin.gets.chomp
-
-if guess == secret_number
-  puts "You won!"
-  abort("Congrats!")
-else
-	guesses_left-=1
-  puts "Wrong! You have #{guesses_left} guesses left"
-end
-
-puts "Make your third guess"
-guess = $stdin.gets.chomp
-
-if guess == secret_number
-  puts "You won!"
-  abort("Congrats!")
-else
-	guesses_left-=1
-  puts "Wrong! You have #{guesses_left} guesses left"
-end
-
-if guesses_left == 0
-	abort("You lose")
-end
 ###############################################################################
 #
 # Stretch Exercises: These are not required but are to challenge you.
