@@ -52,6 +52,18 @@
 #
 ###############################################################################
 
+set_of_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+secret_number = set_of_numbers.sample()
+
+messages = {:win => "Hooray! You correctly guessed the secret number",
+	    :lose => "Sorry, you ran out of guesses. The secret number was #{secret_number}.",
+	    :too_low => "Your guess was too low. Try a higher number.",
+	    :too_high => "Your guess was too high. Try a lower number."
+	    }
+ 
+guesses_left = 3
+
 puts "Welcome to the secret number game. I will be your host"
 
 puts "What is your name"
@@ -59,9 +71,6 @@ puts "What is your name"
 player_name = gets.chomp
 
 puts "Hi there #{player_name}! You have 3 guesses to guess the secret number, which is between 1 and 10"
-
-guesses_left = 3
-SECRET_NUMBER = 9
 
 while guesses_left > 0 
   puts "You have #{guesses_left} guesses left"
@@ -71,11 +80,11 @@ while guesses_left > 0
     puts "Your guess is not a number between 1 and 10. Try again"
     next
   end
-  if player_guess_as_int == SECRET_NUMBER
-    puts "Correct! The number was #{SECRET_NUMBER}. You won!"
+  if player_guess_as_int == secret_number
+    puts "Correct! The number was #{secret_number}. You won!"
     # Quit script entirely on a win
     exit 0
-  elsif player_guess_as_int > SECRET_NUMBER
+  elsif player_guess_as_int > secret_number
     puts "Try lower next time"
     guesses_left -= 1
   else
@@ -85,4 +94,4 @@ while guesses_left > 0
 end
 
 # If loop completed, we're out of guesses and player lost
-puts "Sorry, you lose. The secret number was #{SECRET_NUMBER}"
+puts "Sorry, you lose. The secret number was #{secret_number}"
