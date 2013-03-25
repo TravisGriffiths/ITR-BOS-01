@@ -64,7 +64,73 @@
 #
 ###############################################################################
 
+######################################
+#
+# Welcome the users and let them know that I Am the creator
+#
+######################################
+puts
+puts"Welcome to the Secret Number Game"
+puts
 
+# Create two variables, one to hold my first name and one to hold my last name
+first_name = "Joey"
+last_name = "Parshley"
+
+# Print out to screen the message telling the user that this was created by me
+# Done by concatenating the Strings with the values of the variables created up above
+puts "Created by " + first_name + " " + last_name
+puts
+
+# Ask the user to supply their name. Store it inside the 'user' variable
+puts "What is your name"
+user = gets.chomp
+puts
+puts "Hi #{user}!\n\nYou will have three tries to guess the number I am thinking of between 1 and 10."
+puts
+
+# Create an variable called 'guesses_left' to hold the number of guesses the user has. Iniitialize it to be 3
+
+guesses_left = 3
+
+# Tell the user how many guesses there are left using string interpolation
+
+puts
+puts "You have #{guesses_left} guesses left."
+puts
+
+# Create a variable called 'secret_number' to hold the secret number which will be an integet between 1 and 10
+
+secret_number = 7
+
+# Ask the user for their first guess
+# If the user has guessed the secret number tell them they won.
+# IF the user is wrong decrement the number of guesses left and let them know
+# and ask for another guess tell them if they were too high or low
+# If they get it wrong after three tries tell them what the number was
+
+while guesses_left > 0 do
+  puts "Please guess a number between 1 and 10"
+  puts
+  guess = gets.to_i
+  if(guess == secret_number)
+    puts
+    puts "You Won!"
+    puts
+    break
+  else
+    if(guess < secret_number)
+      error = "too low"
+    else
+      error = "too high"
+    end 
+    puts
+    puts "#{guess} is #{error}!\n\nYou have #{guesses_left - 1} left."
+    puts
+    guesses_left = guesses_left - 1
+  end
+end
+puts "The secret number was #{secret_number}"
 ###############################################################################
 #
 # Stretch Exercises: These are not required but are to challenge you.
