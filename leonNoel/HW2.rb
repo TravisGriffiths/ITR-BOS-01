@@ -77,9 +77,9 @@ puts "You have #{guesses_left} guesses left"
 secret_number = 5
 
 puts "Make your first guess"
-guess = $stdin.gets.chomp
+guess = $stdin.gets.chomp.to_i
 
-if guess == "secret_number"
+if guess == secret_number
   puts "You won!"
   abort("Congrats!")
 else
@@ -90,7 +90,7 @@ end
 puts "Make your second guess"
 guess = $stdin.gets.chomp
 
-if guess == "secret_number"
+if guess == secret_number
   puts "You won!"
   abort("Congrats!")
 else
@@ -101,7 +101,7 @@ end
 puts "Make your third guess"
 guess = $stdin.gets.chomp
 
-if guess == "secret_number"
+if guess == secret_number
   puts "You won!"
   abort("Congrats!")
 else
