@@ -52,7 +52,7 @@ responses << "It is decidedly so" << "Ask again later" << "My reply is no"
 puts responses
 puts ""
 
-responses.shift
+responses.shift()
 
 puts responses
 puts ""
