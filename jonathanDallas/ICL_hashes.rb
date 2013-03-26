@@ -77,3 +77,16 @@ responses[:negative] = [
 
 puts responses[:negative]
 puts ""
+
+if (responses.has_key?(:positive))
+	puts "\nDon't worry there are positive responses"
+end
+
+if (!responses.has_key?(:cruel))
+	puts "And we haven't created any cruel responses"
+end
+
+indexes = [:positive,:neutral,:negative]
+puts ""
+puts "Here's your answer"
+puts responses[indexes[rand(0..2)]][rand(0..responses.size)]
