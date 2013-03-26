@@ -1,25 +1,35 @@
 #!/Users/travisgriffiths/.rvm/rubies/ruby-1.9.3-p327/bin/ruby
 
-# Functions are a section of code that is definined via def 
-# to for later use
+# Methods are a section of code that is definined via def 
+# to for later use, when these are not attached to a class
+# many programmers will refer to this as simply a function,
+# Matz states that he doesn't make this distinction and calls
+# all named sections of code method reguardless of attachment
+# to a class.
 
-puts "Simple Functions -----------"
+puts "Simple Method -----------"
 
-# This is a function, because it is not attached to a class
-def some_function(argument) 
+# This is not attached to a class, but still is called a method in Ruby
+def some_method(argument) 
 	#function logic goes here
-	puts "You passed '#{argument}' as an argument to 'some_function'"
+	puts "You passed '#{argument}' as an argument to 'some_method'"
 end
 
-# Call functions simply by using the name and passing any arguments
+# Call simple methods by using the name and passing any arguments
 some_function("I am a string argument")
 
 
 # Classes map to things we commonly use nouns to talk about
+# Generaly this looks like: noun.verb(adverb)
+# Examples:  Horse.run(:fast), Door.is_locked?, or Array.fetch(index)
+# 
+# This is an example of what is known as an abstract class because it
+# itself is NOT instantiated, it has functionality that it adds to
+# extending classes via the extension mechanism.
 class Mammal 
 
-	# This is a method, vice a function, because it is attached to
-	# the Mammal class
+	# methods in extended classes are available to the classes
+	# which extend them
 	def is_warm_blooded?
 		true
 	end
@@ -86,5 +96,17 @@ puts "#{racehorse1.name} is a #{racehorse1.class} and #{racehorse2.name} is a #{
 racehorse1.set_weight(823)
 puts "\n#{racehorse1.name} weighs #{racehorse1.get_weight} pounds"
 
+# Ruby is strongly encapsulated, this means that the instance variables 
+# (the @ variables) and other values may only be accessed by using 
+# methods, and may not be accessed directly.
+
+############ DOESN'T WORK #################
+
+# puts "\n#{racehorse1.name} weighs #{racehorse1.weight}"
+
 # Importantly, classes get all the methods of any class they extend
 puts "\n#{racehorse1.name} is warm blooded: #{racehorse1.is_warm_blooded?}"
+
+
+
+
