@@ -81,17 +81,17 @@ while guesses_left > 0
     next
   end
   if player_guess_as_int == secret_number
-    puts "Correct! The number was #{secret_number}. You won!"
+   puts messages[:win]
     # Quit script entirely on a win
     exit 0
   elsif player_guess_as_int > secret_number
-    puts "Try lower next time"
+    puts messages[:too_high]
     guesses_left -= 1
   else
-   puts "Try higher next time"
+   puts messages[:too_low]
    guesses_left -= 1
   end
 end
 
 # If loop completed, we're out of guesses and player lost
-puts "Sorry, you lose. The secret number was #{secret_number}"
+puts messages[:lose]
