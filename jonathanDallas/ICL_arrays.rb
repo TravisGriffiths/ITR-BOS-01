@@ -43,9 +43,21 @@
 #
 #    And print your Array one more time to make sure it's correct!
 
-var responses = ["It is certain", "Reply hazy, try again", "Don't count on it"]
+responses = ["It is certain","Reply hazy, try again","Don't count on it"]
+puts "\nYour answer is: #{responses[1]}\n"
+puts ""
 
-puts "Your answer is: {#{responses[1]}"
+responses << "It is decidedly so" << "Ask again later" << "My reply is no"
 
-responses.push(["It is decidely so", "Ask again later", "My reply is no"])
+puts responses
+puts ""
+
+responses.shift()
+
+puts responses
+puts ""
+
+responses.unshift("As I see it, yes")
+
+puts responses
 
