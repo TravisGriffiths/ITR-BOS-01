@@ -53,7 +53,7 @@
 
 ################################################################################
 messages = Hash.new
-messages[:win] = "Congrats! you have won.inspec"
+messages[:win] = "Congrats! you have won"
 messages[:lose] = "Sorry, you lose" 
 messages[:too_low] = "Your guess was too low"
 messages[:too_high] = "Your guess was too high"
@@ -80,7 +80,7 @@ guesses_left= 3
 #this is where we get our number
 #
 set_of_numbers=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-secret_number_index = rand(10)
+secret_number_index = rand(9)
 secret_number = set_of_numbers[secret_number_index]
 #
 # Let's get started!!!
@@ -95,17 +95,17 @@ until (counter == 0) do
 		guesses_left -= 1
 		if (secret_number > current_guess) 
 			if (guesses_left > 0) 
-				puts "wrong number, #{player_name}, #{messages[:too_high]} you have #{guesses_left} more tries, try again!"
+				puts "wrong number, #{player_name}, #{messages[:too_low]} you have #{guesses_left} more tries, try again!"
 				current_guess = gets.to_i
 				counter -= 1
 			else
-				puts "sorry #{player_name} you have run out of tries!"
+				puts "sorry #{player_name} you have run out of tries! the number was #{secret_number}"
 				counter = 0
 				puts "this is the end of our game, please come back and play again"
 			end
 		else 
 			if (guesses_left > 0)
-				puts "wrong number, #{player_name}, #{messages[:too_low]} you have #{guesses_left} more tries,  try again!"
+				puts "wrong number, #{player_name}, #{messages[:too_high]} you have #{guesses_left} more tries,  try again!"
 				current_guess = gets.to_i
 				counter -= 1
 			else
@@ -115,7 +115,7 @@ until (counter == 0) do
 			end
 		end
 	else 
-		puts "#{messages[:win]}"
+		puts "#{messages[:win]} #{secret_number}"
 		counter = 0
 	end
 end
