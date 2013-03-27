@@ -1,3 +1,5 @@
+:q
+:q!
 # HW 01
 #
 # Purpose:

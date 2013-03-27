@@ -44,7 +44,7 @@
 ###############################################################################
 # this is the first assignment in Ruby on Rails class
 puts "Hello and Welcome to the Secret Number Game!"
-first_name = "Maryann"
+first_name = ""
 last_name = "Hondo"
 puts "this game was created by" + first_name + " " + last_name + " "
 print "to play the game, pick a number between 1 & 20 and hit enter "
