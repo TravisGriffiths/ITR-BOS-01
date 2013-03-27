@@ -4,7 +4,7 @@
 # to for later use, when these are not attached to a class
 # many programmers will refer to this as simply a function,
 # Matz states that he doesn't make this distinction and calls
-# all named sections of code method reguardless of attachment
+# all named sections of code methods reguardless of attachment
 # to a class.
 
 puts "Simple Method -----------"
@@ -102,6 +102,8 @@ puts "\n#{racehorse1.name} weighs #{racehorse1.get_weight} pounds"
 
 ############ DOESN'T WORK #################
 
+## Can't do this, because @weight is encapsulated, it must be accessed via
+# the get_weight method, not directly.
 # puts "\n#{racehorse1.name} weighs #{racehorse1.weight}"
 
 # Importantly, classes get all the methods of any class they extend
