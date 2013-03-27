@@ -1,4 +1,4 @@
-###############################################################################
+#############################################################################
 #
 # Introduction to Ruby on Rails
 #
@@ -50,4 +50,74 @@
 #
 #Put your solution below this line.
 #
-###############################################################################
+
+################################################################################
+messages = Hash.new
+messages[:win] = "Congrats! you have won.inspec"
+messages[:lose] = "Sorry, you lose" 
+messages[:too_low] = "Your guess was too low"
+messages[:too_high] = "Your guess was too high"
+#
+# this is the third assignment in Ruby on Rails class
+# let's introduce ourselves....
+puts "Hello and Welcome to the Secret Number Game!"
+first_name = "Maryann"
+last_name = "Hondo"
+puts "this game was created by " + first_name + " " + last_name + " "
+#
+# setting up the rules to play
+#
+counter=3
+puts "Rule 1: you will get 3 tries to guess a number between 1 and 10"
+puts "before we play the game, I'd like to know your name-"
+puts "What is your name?"
+player_name= gets.chomp
+#
+#this is where we set the number of guesses
+#
+guesses_left= 3
+#
+#this is where we get our number
+#
+set_of_numbers=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+secret_number_index = rand(10)
+secret_number = set_of_numbers[secret_number_index]
+#
+# Let's get started!!!
+#
+print player_name + "- type a number between 1 & 10 and hit enter "
+current_guess = gets.to_i
+until (counter == 0) do 
+	#
+	#   this is where we compare the two
+	#
+	if (secret_number != current_guess) 
+		guesses_left -= 1
+		if (secret_number > current_guess) 
+			if (guesses_left > 0) 
+				puts "wrong number, #{player_name}, #{messages[:too_high]} you have #{guesses_left} more tries, try again!"
+				current_guess = gets.to_i
+				counter -= 1
+			else
+				puts "sorry #{player_name} you have run out of tries!"
+				counter = 0
+				puts "this is the end of our game, please come back and play again"
+			end
+		else 
+			if (guesses_left > 0)
+				puts "wrong number, #{player_name}, #{messages[:too_low]} you have #{guesses_left} more tries,  try again!"
+				current_guess = gets.to_i
+				counter -= 1
+			else
+				puts "#{player_name},  #{messages[:lose]}"
+				counter = 0
+				puts "this is the end of our game, please come back and play again"
+			end
+		end
+	else 
+		puts "#{messages[:win]}"
+		counter = 0
+	end
+end
+
+
