@@ -80,7 +80,7 @@ while (count > 0)
 		end
 	guess_count-=1
 	count-=1
-end
+end #while end
 puts "Sorry you lose!"
 exit
 
