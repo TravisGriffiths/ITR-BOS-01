@@ -23,7 +23,7 @@ x = "I am outside of everything"
 
 y = "I am y outside of everything"
 
-$g = "I am a global"
+$g = "I am a global"  #$ denotes a global variable
 
 puts "\nIn main scope x is: #{x}"
 

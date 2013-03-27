@@ -34,3 +34,8 @@
 #    Tuesday, September 19, 1985 at 09:15AM
 
 
+# 5. Create a method that takes the optional arguments: :day_of_week, :month, :day, :year, :time
+# By default i.e. if no argument is passed, the full: Tuesday, September 19, 1985 at 09:15AM format
+# is returned as a string i.e. NOT printed. Otherwise only the parts pertaining to the corrisponding
+# symbols are included in the return string.
+
