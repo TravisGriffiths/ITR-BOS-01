@@ -1,3 +1,4 @@
+#!/Users/jparshley/.rvm/rubies/ruby-1.9.3-p392/bin/ruby
 ################################################################################
 #
 # Introduction to Ruby on Rails

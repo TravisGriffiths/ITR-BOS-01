@@ -25,6 +25,7 @@ provinces = {
 
 # 1. display each province, followed by its abbreviation, each on its own line
 puts "\n--------------------" # line to distinguish exercise output
+puts provinces
 
 
 # 2. using the .each method, display the months in the second quarter of the year, in a single row
