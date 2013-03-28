@@ -14,7 +14,23 @@
 # by the current date and time. Use newline character ("\n") as needed. Be sure to close the file. 
 # Check your work on the file system.
 
+print "Give file name: "
 
+file_name = gets
+
+print "I am output with no chomp: #{file_name} This is text after."
+
+print "\n\nI am output with WITH chomp: #{file_name.chomp} This is text after."
+
+#file = File.new("#{file_name}.txt", "w+")
+
+#print "Give a sentance: "
+
+#user_input = gets.chomp
+
+#file.write("#{Time.now}: #{user_input}")
+
+#file.close()
 
 
 
