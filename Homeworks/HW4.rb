@@ -34,3 +34,51 @@
 # Student's Solution
 #
 ###############################################################################
+
+
+###############################################################################
+#  Stretch Exercise:  Complete the ICL_door_class.rb exercise in 
+#  Exercises/Objects_and_Methods folder, reproduced here
+#
+#  NOTE: Use the internet, public APIs and the functions_vs_methods.rb 
+#  examples in the Exercises/Objects_and_Methods folder to help you 
+###############################################################################
+
+# Build a class based on a natural language (English) specification:
+# 
+# Specification: We have want a ruby application to track our doors, see how
+# how often we go in and out and if our house is secure, etc. To to this 
+# we want a class to track what our doors do. Our doors can be opened and 
+# closed, as well as locked. We should be able to check a door to see what 
+# state it is in, is it open or shut or locked. Each door should also have a 
+# name so we can tell them apart.
+#
+# The purpose of this exercise is to stretch your abilities, and get you to 
+# think about everyday things in terms of classes and methods. Your projects
+# now and later will start out as natural language specifications that you 
+# will want to turn into code. This is a simple case.
+#  
+################################# Define Door ###################################
+
+
+############# Make 2 doors, front door and back door ############################
+
+# Output the names of the doors to show they are created and different
+
+########################## Lock the back door ###################################
+
+########################## Open the front door ##################################
+
+################# Check if the front door is locked #############################
+
+# Output the status to show the state
+
+################  Check if the back door is locked ##############################
+
+# Output the status to show the state
+
+################  Check if the front door is open   #############################
+
+# Output the status to show the state
+
+################  Check if the back door is open   ##############################

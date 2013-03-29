@@ -43,3 +43,9 @@
 #
 #    And print your Array one more time to make sure it's correct!
 
+var responses = ["It is certain", "Reply hazy, try again", "Don't count on it"]
+
+puts "Your answer is: {#{responses[1]}"
+
+responses.push(["It is decidely so", "Ask again later", "My reply is no"])
+
