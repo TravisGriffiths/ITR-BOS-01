@@ -35,6 +35,18 @@
 #
 ###############################################################################
 
+GUESSES_ALLOWED = 3
+
+def increment_guess_count(number)
+  number + 1
+end
+
+def guesses_left(guesses_made)
+  GUESSES_ALLOWED - guesses_made
+end
+
+set_of_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 secret_number = set_of_numbers.sample()
 
 messages = {:win => "Hooray! You correctly guessed the secret number",
@@ -44,6 +56,7 @@ messages = {:win => "Hooray! You correctly guessed the secret number",
 	    }
  
 guesses_left = 3
+guesses_made = 0
 
 puts "Welcome to the secret number game. I will be your host"
 
@@ -57,6 +70,7 @@ while guesses_left > 0
   puts "You have #{guesses_left} guesses left"
   puts "Enter your guess"
   player_guess_as_int = gets.to_i
+  guesses_made = increment_guess_count(guesses_made)
   unless (0 < player_guess_as_int) and (player_guess_as_int <= 10)
     puts "Your guess is not a number between 1 and 10. Try again"
     next
@@ -67,10 +81,10 @@ while guesses_left > 0
     exit 0
   elsif player_guess_as_int > secret_number
     puts messages[:too_high]
-    guesses_left -= 1
+    guesses_left = guesses_left(guesses_made)
   else
    puts messages[:too_low]
-   guesses_left -= 1
+   guesses_left = guesses_left(guesses_made)
   end
 end
 
