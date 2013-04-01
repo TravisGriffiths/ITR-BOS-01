@@ -29,7 +29,8 @@ class Door
 	attr_accessor :closed
 	attr_accessor :status
 
-	def initialize
+	def initialize(name)
+		@name = name
 	end
 	def lock
 		@opened = false
@@ -72,16 +73,14 @@ end
 
 ########################## Lock the back door ###################################
 
-back_door = Door.new
-back_door.name = "Back Door"
+back_door = Door.new("Back Door")
 back_door.lock
 
 puts back_door.state
 
 ########################## Open the front door ##################################
 
-front_door = Door.new
-front_door.name = "Front Door"
+front_door = Door.new("Front Door")
 front_door.open
 
 puts front_door.state
