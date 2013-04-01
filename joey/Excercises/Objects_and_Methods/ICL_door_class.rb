@@ -1,4 +1,4 @@
-#!/Users/travisgriffiths/.rvm/rubies/ruby-1.9.3-p327/bin/ruby
+#!/Users/jparshley/.rvm/rubies/ruby-1.9.3-p392/bin/ruby
 
 ################################################################################
 #
@@ -16,8 +16,7 @@
 # see what state it is in, is it open or shut or locked. Each door should also 
 # have a name so we can tell them apart.
 
-################################# Define Door ###################################
-
+################################# Define Door ##################################
 
 ############# Make 2 doors, front door and back door ############################
 
@@ -42,3 +41,32 @@
 ################  Check if the back door is open   ##############################
 
 # Output the status to show the state
+
+class Door
+  def initialize(name,is_locked,is_open)
+    @name = name
+    @is_locked = is_locked
+    @is_open = is_open
+  end
+  def lock_door
+    @is_locked = 'locked'
+  end
+  def open_door
+    @is_open = 'open'
+  end
+  def display
+    puts "I am the #{@name} door and my lock is #{@is_locked} and I am #{@is_open}"
+  end
+end
+
+front_door = Door.new('Frontdoor','unlocked','closed')
+back_door = Door.new('Backdoor','unlocked','closed')
+back_door.lock_door
+front_door.open_door
+puts
+front_door.display
+puts
+back_door.display
+
+
+

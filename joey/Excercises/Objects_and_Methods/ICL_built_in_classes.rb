@@ -45,9 +45,33 @@ puts
 # By default i.e. if no argument is passed, the full: Tuesday, September 19, 1985 at 09:15AM format
 # is returned as a string i.e. NOT printed. Otherwise only the parts pertaining to the corrisponding
 # symbols are included in the return string.
-
+puts "++++++++++++++++++++++++++++++"
 def format_date(*time)
-   t = Time.now.strftime("%A, %B %d, %Y at %H:%M%p")
+  t = Time.now
+  format_string = ''
+  if (time.length == 0)
+    format_string += '%A, %B %d, %Y at %H:%M%p'
+  else
+    # show the formats
+    if(time.include?:day_of_week)
+      format_string += '%A, '
+    end
+    if(time.include?:month)
+      format_string += '%B '
+    end
+    if(time.include?:day)
+      format_string += '%d, '
+    end
+    if(time.include?:year)
+      format_string += '%Y '
+    end
+    if(time.include?:time)
+      format_string += 'at %H:%M%p'
+    end
+    
+  end
+  t.strftime("#{format_string}")
 end
 
-puts format_date()
+puts format_date(:day_of_week,:month,:day,:year,:time)
+puts
