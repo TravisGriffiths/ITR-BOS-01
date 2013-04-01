@@ -1,0 +1,8 @@
+attr_reader and attr_writer instead of attr_accessor
+
+Comments for functions 
+what is function expecting and what should it return
+
+
+for arrays don't use a[20] use a.fetch(20) => example a 10 array (nil, verses error).
+Let things explode instead of getting "nil" back.  Or check for "nil"

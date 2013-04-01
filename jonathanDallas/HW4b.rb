@@ -31,6 +31,9 @@ class Door
 
 	def initialize(name)
 		@name = name
+		@opened = true
+		@closed = false
+		@locked = false
 	end
 	def lock
 		@opened = false
