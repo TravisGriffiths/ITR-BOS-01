@@ -129,6 +129,25 @@ end
 #  
 ################################# Define Door ###################################
 
+class Door
+	attr_accessor :name
+	attr_accessor :locked
+
+	def initialize
+		unlock()
+	end
+	def lock
+		@locked = true
+	end
+	def unlock
+		@locked = false
+	end
+end
+
+back_door = new Door
+back_door.name = "Back Door"
+
+puts back_door.locked
 
 ############# Make 2 doors, front door and back door ############################
 
