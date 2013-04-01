@@ -1,3 +1,5 @@
+#!/Users/travisgriffiths/.rvm/rubies/ruby-1.9.3-p327/bin/ruby
+
 ################################################################################
 #
 # Introduction to Ruby on Rails

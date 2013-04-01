@@ -51,3 +51,18 @@ sums do |array|
 	array.each { |i| total += i}
 	total
 end
+
+puts "\nMethod block_given? will indicate if a block was passed---------"
+
+def do_things(things)
+	if block_given?
+		yield
+	else
+		puts "Doing #{things}"
+	end
+end
+
+do_things("arg stuff") { puts "Doing block things instead. "}
+
+
+
