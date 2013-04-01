@@ -1,0 +1,72 @@
+Notes March 25 2013
+
+Good resources
+stackoverflow.com
+www.ruby-doc.org
+
+Rails resources
+railscasts.com
+
+ruby pickax book
+
+Think about your project and what you want it to do
+interact with database
+focus on web pages
+consumers interactions / services / info
+
+Today
+Arrays
+Hashes
+Loops
+
+must convert number to string before printing
+to_s 
+to_string
+
+Arrays
+Best Vacatio spots
+0)Orlando
+1)Iceland
+2)Provence
+best_vacation_spots[2] => Provence
+best_vacation_spots[-1] => Provence #[-1]= last item in list
+est_vacation_spots[-2] => Iceland
+
+array_of_things = [] or Array.new
+["Orlando","Iceland","Provence"]
+
+puts
+push / pop  adds to the top or end of the array (Think of a stack of plates)
+shift / unshift (remove first, insert a new first in the array -- in '0' slot)
+
+will want to know 
+a =[]
+
+length of array "a"   	a.length
+class of array "a"		a.class
+sort array "a"			a.sort	
+insert into array "a"	a.insert
+
+
+Hashes allows the ______ to get information quickly
+Hashes are curly brackets to initialize
+
+Best Vacation Sports for 
+'Art' => Paris			:Art => Paris	
+'Beach' => Rio			:Beach => Rio
+'Nature' => Alaska		:Nature => Alaska	
+
+
+best_vacation_spots['Beach'] returns Rio
+best_vacation_spots['Nature'] returns Alaska
+best_vacation_spots['Art'] returns Paris
+
+pwd = "print working directory"
+
+Good plugins for Sublime
+coffeesript
+lint 
+
+
+
+
