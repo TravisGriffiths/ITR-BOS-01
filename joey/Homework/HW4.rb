@@ -35,6 +35,82 @@
 # Student's Solution
 #
 ###############################################################################
+def increment_guess_count(guesses_made)
+  guesses_made = guesses_made + 1
+end
+def guesses_left(guesses_left)
+  guesses_left = guesses_left - 1                           # Increment the number if guesses by 1
+end
+
+first_name = "Joey"                                                     # Holds first name of creator
+last_name = "Parshley"                                                  # Holds the last name of the creator
+set_of_numbers = (1..10).to_a                                           # Range of 1-10 to be guessed from 
+secret_number = set_of_numbers.sample()                                 # Random number generated from set_of_numbers 
+guesses_left = 3                                                        # Number of guesses the user has.
+guesses_made = 0
+messages = {                                                            # Text for messages - possible localization?
+  welcome: "Welcome to the Secret Number Game!",
+  creator: "Created by #{first_name} #{last_name}",
+  whats_name: "What is your name",
+  tries: "\n\nYou will have three tries to guess the number I am thinking of between 1 and 10.",
+  initial_guesses: "You have #{guesses_left} guesses left.",
+  pick_a_number: "Please guess a number between 1 and 10",
+  greeting: "Hi",
+  win: "You Won!",
+  lose: "You Lost :-(",
+  too_low: "too low",
+  too_high: "too high",
+  secret_number_was: "The secret number was #{secret_number}"
+}
+
+# Welcome the users and let them know that I Am the creator
+puts
+puts"#{messages[:welcome]}"                                             # Welcome the user
+puts
+puts "#{messages[:creator]}"                                            # Im the creator
+puts
+
+# Ask the user to supply their name and let them know how many quesses they have
+puts"#{messages[:whats_name]}"                                          # Ask who they are
+user = gets.chomp
+puts
+puts "#{messages[:greeting]} #{user}!#{messages[:tries]}"               # Tell them what to do including how many tries
+puts
+puts "#{messages[:initial_guesses]}"                                    # How many guesses are left
+puts
+
+# Ask the user for their guess stating if won or not, if they are wrong let them know if they
+# are too low or high. Ask them for another guess until they have used up all three tries
+# letting them know how many chances they have left
+while guesses_left > 0 do
+  puts "#{messages[:pick_a_number]}"                                    # Ask them to pick a number
+  puts
+  guess = gets.to_i
+  guesses_made = increment_guess_count(guesses_made)                    # Increment the number of guesses made
+  guesses_left = guesses_left(guesses_left)                             # Determine the amount of guesses left
+                                                                        # bases on the number of guesses made
+  if(guess == secret_number)
+    puts
+    puts "#{messages[:win]}"                                            # The numbers match so tell the user they won
+    puts
+    break
+  else
+    if(guess < secret_number)
+      error = "#{messages[:too_low]}"                                   # The guess is too low, let em know
+    else
+      error = "#{messages[:too_high]}"                                  # The guess is too high, let em know
+    end 
+    puts
+    if(guesses_left == 0)
+      puts "#{messages[:lose]}"
+      puts "#{messages[:secret_number_was]}"
+    else
+      puts
+      puts "#{guess} is #{error}!\n\nYou have #{guesses_left} left."  # How many more guesses? 
+      puts
+    end
+  end
+end
 
 
 ###############################################################################
@@ -108,3 +184,4 @@ puts
 front_door.display
 puts
 back_door.display
+puts

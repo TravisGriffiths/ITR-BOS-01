@@ -1,3 +1,4 @@
+#!/Users/jparshley/.rvm/rubies/ruby-1.9.3-p392/bin/ruby
 ################################################################################
 #
 # Introduction to Ruby on Rails
@@ -64,4 +65,9 @@ responses[:negative] = [ "Don't count on it", "My reply is no",
 # Student's Solution:
 #
 ################################################################################
+def forecast_future(question,responses)
+  random_key = responses.keys[rand(responses.size)]
+  puts responses[random_key].sample
+end
 
+forecast_future("Will I win the lottery?", responses)
