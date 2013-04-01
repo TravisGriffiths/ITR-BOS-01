@@ -1,3 +1,6 @@
+#!/usr/local/rvm/rubies/ruby-1.9.3-p194/bin/ruby
+
+
 ################################################################################
 #
 # Introduction to Ruby on Rails
@@ -31,73 +34,61 @@ responses[:negative] = [ "Don't count on it", "My reply is no",
 
 puts "Problem 1:"
 
-# 2. Translate Problem 1 below to use `while` instead of `loop`.
+count = 4 #responses[:negative].length
 
-count = responses[:negative].length-1
-
-while count >= 1 do
+while(count >= 1)
   puts responses[:negative][count]
+  count -= 1
 end
+
+# 2. Translate Problem 1 below to use `while` instead of `loop`.
 
 puts "\n\nProblem 2:"
 
 # 3. Translate the loop to use `until`.
 
-count = responses[:negative].length-1
-until count < 1 do
-  puts responses[:negative][count]
-end
-
 puts "\n\nProblem 3:"
+
+count = 4
+
+
+until count == 0
+  puts responses[:negative][count]
+  count -= 1
+end
 
 # 4. Translate the loop to use `times` to iterate 3 times.
 
-count = 0
-3.times do
-  puts responses[:negative][count]
-  count += 1
-end
-
-for i in 0..2
-  puts responses[:negative][i]
-end
-
-
-puts "\n\nProblem 4:"
+3.times { |i| puts responses[:negative][i]}
 
 # 5. Translate the loop to use a range from 0 to 4
 
-(0..4).each do |n|
-  puts responses[:negative][n]
-end
-
 puts "\n\nProblem 5:"
+
+(1..4).each{|i| puts responses[:negative][i]}
 
 # 6. Create a new loop using the `.each` method to iterate over each
 #    value in the `responses[:neutral]` Array to print each String to
 #    the screen.
 
-responses[:negative].each do |count|
-  puts count
-end
-
 puts "\n\nProblem 6:"
+
+responses[:neutral].each do |response|
+  puts responses[:neutral][response]
+end
 
 # 7. You can also loop through Hashes. Loop through our `responses`
 #    hash, printing each Array to the screen.
 
-puts responses.values
-
 puts "\n\nProblem 7:"
+
+responses.each do |k,v|
+  puts responses[v]
+end
 
 # 8. Finally, iterate over both the Hash and then Array of that key so
 #    that you individually print out each value of the Array.
 
-responses.values.each do |n|
-  n.each do |m|
-    puts m
-  end
-end
-
 puts "\n\nProblem 8:"
+
 

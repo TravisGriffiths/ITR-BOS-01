@@ -31,8 +31,8 @@ provinces = {
 # value (province code). You may want to explore built-in Hash class methods including .has_value? .invert and .fetch. 
 puts "\n--------------------" # line to distinguish exercise output
 
-def get_province_name()
-	provinces = {
+def get_province_name(province_code)
+provinces = {
 				"Australian Capital Territory" => "ACT",
 				"New South Wales" => "NSW",
 				"Northern Territory" => "NT",
@@ -43,20 +43,22 @@ def get_province_name()
 				"Western Australia" => "WA"
 			}
 
-	print "What province code would you like to see? "
+print "What province code? would you like to see?"
+pc = gets.chomp
 
-	prov_code = gets.chomp
+if(proovinces.values.include?(pc))
+puts "#{pc} is #{provinces.invert[pc]}"
 
-	if(provinces.has_value?(prov_code))
-		puts "#{pc} is: #{provinces.invert[pc]}"
-	else
-		puts "This is not a valid code. Valid codes are: "
-		puts provinces.values
-	end
+else
 
+puts "This is not a valid code. Valid codes are: "
+puts province.values
 end
 
-#get_province_name()
+
+
+
+end #get_province_name
 
 
 # 2. Write a method which accepts any number of parameters representing months, by number 1 ("January") through 
@@ -67,16 +69,7 @@ puts "\n--------------------" # line to distinguish exercise output
 def get_month(*args)
 	months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 	result = ""
-	args.each do |month| 
-		month = month.to_i
-		if(month <= 12 && month > 0 )
-			result += "#{months[month - 1]}, "
-		else
-			result += "invalid: #{month}, "
+	args.each do |month|	
+		if (mo)
+			
 		end
- 	end
- 	result
-end
-
-
-puts get_month(3, 5, 12, 56, 2456, 4, 7)

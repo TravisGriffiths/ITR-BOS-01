@@ -35,6 +35,75 @@
 #
 ###############################################################################
 
+# increment the number of guesses made
+def increment_guess_count(value)
+	value += 1
+end
+
+# return the number of guess left - counting down from 3
+def guesses_left(num_guesses)
+	3 - num_guesses
+end
+
+puts "\nWelcome to the Secret Number Game!"
+puts "\nHey Bob, who's our first player?"
+print "name: "
+# get the players name
+name = gets.chomp
+# greet the player
+puts "\nHi #{name}, welcome to the game"
+# set the number of guess allowed
+guesses_made = 0
+# create a random number from 1 to 10
+number = rand(1..10)
+
+# create a list of messages to display base on guesses
+messages = {
+	winner: "\nCongratulation #{name} you just won a sense of accomplishment",
+	loser: "sorry the number was #{number}",
+	too_high: "\nToo High",
+	too_low: "\nToo Low"
+}
+
+# prompt the user to start guessing
+puts "\nIn 3 tries can you figure out the number, between 1 and 10 that I'm thinking of?"
+
+# Ask the user for a guess at least three times
+while(guesses_made < 3)
+	# tell the user how many guesses has has left.
+	print "guesses left #{guesses_left(guesses_made)}: "
+
+	# get the number entered from the user
+	guess = gets.chomp.to_i
+
+	# record that a guess was made
+	guesses_made = increment_guess_count(guesses_made)
+
+	# if the user's number matches the random number
+	if number == guess
+		# tell them they guessed correctly
+		puts messages[:winner]
+		# record that he successfully guessed the answer
+		success=true
+		# stop asking for guesses
+		break;
+	elsif number < guess
+		# if their guess is too high tell them
+		puts messages[:too_high]
+	elsif number > guess
+		# if their guess is too low tell them
+		puts messages[:too_low]
+	end
+
+
+end
+
+if(!success)
+	puts messages[:loser] 
+end
+
+
+
 
 ###############################################################################
 #  Stretch Exercise:  Complete the ICL_door_class.rb exercise in 
