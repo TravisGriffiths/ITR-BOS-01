@@ -31,7 +31,17 @@
 
 #   Start the Game. 
 
-
+###############################################################################
+# Extra -- take a look at: 
+# http://railscasts.com/episodes/267-coffeescript-basics
+#
+# Coffeescript is a language that compiles to Javascript, but is much simpler, 
+# and avoids many of the difficult parts in raw Javascript. It is bundled 
+# directly into rails. Documentation and a web interpreter can be found here: 
+# http://jashkenas.github.com/coffee-script/
+#
+# Coffeescript allows for quick javascript development in a rails environment.
+#
 ###############################################################################
 #
 # Challenge: change one or more of the methods in your solution to use a block
