@@ -31,3 +31,13 @@
 
 #   Start the Game. 
 
+
+###############################################################################
+#
+# Challenge: change one or more of the methods in your solution to use a block
+# argument and yield.
+#
+# Further Challenge: Change one or more of the methods in your solution to 
+# take either a block OR normal arguments. 
+#
+###############################################################################
