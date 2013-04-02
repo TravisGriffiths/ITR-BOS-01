@@ -1,0 +1,61 @@
+attr_reader and attr_writer instead of attr_accessor
+
+Comments for functions 
+what is function expecting and what should it return
+
+
+for arrays don't use a[20] use a.fetch(20) => example a 10 array (nil, verses error).
+Let things explode instead of getting "nil" back.  Or check for "nil"
+
+$ on a variable means global.
+
+$LOAD_PATH.unshift(".") => adds current path to the beginning of the Path array => use in IRB
+
+
+require "Laptop" => looks for the Laptop.rb file in one of the LOAD_PATH locations
+
+external files must be fully encapsulated in Classes.
+
+not relative to the file call it. 
+Example => "./lib/Person" works if you're running ruby in the current directory (not always the case).
+
+--
+
+"yield" is the block that is passed to the method
+For Example => each is a method that accepts a block
+
+--
+
+inheritance 
+
+Class Horse < Mammal
+(can only be one level deep)
+
+--
+
+Class Variables
+
+Class Horse
+@@class var
+
+
+Horse1.new
+Horse2.new
+
+both use the same the @@class var.
+
+--
+
+Hiding methods from the user
+
+def public_func
+   ....
+end
+
+private
+
+def private_func
+   ....
+end
+
+-------------------
