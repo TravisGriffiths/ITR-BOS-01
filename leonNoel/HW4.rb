@@ -35,72 +35,46 @@
 #
 ###############################################################################
 
-# increment the number of guesses made
-def increment_guess_count(value)
-	value += 1
+#1
+set_of_numbers = [1,2,3,4,5,6,7,8,9,10]
+
+secret_number = set_of_numbers.sample
+
+messages = {:win => "You have won! ", :lose => "You lost. The correct number was #{secret_number} ", :too_low => "Your quess was too low ", :too_high => "Your guess was too high "}
+
+count = 3 #count for my loop
+
+def increment_guess_count (a)
+	increment_count = a
+	increment_count-=1
+	return	increment_count
 end
 
-# return the number of guess left - counting down from 3
-def guesses_left(num_guesses)
-	3 - num_guesses
+def guesses_left (b)	
+	number = b
+	final = number += 1
+	return final
 end
 
-puts "\nWelcome to the Secret Number Game!"
-puts "\nHey Bob, who's our first player?"
-print "name: "
-# get the players name
-name = gets.chomp
-# greet the player
-puts "\nHi #{name}, welcome to the game"
-# set the number of guess allowed
-guesses_made = 0
-# create a random number from 1 to 10
-number = rand(1..10)
-
-# create a list of messages to display base on guesses
-messages = {
-	winner: "\nCongratulation #{name} you just won a sense of accomplishment",
-	loser: "sorry the number was #{number}",
-	too_high: "\nToo High",
-	too_low: "\nToo Low"
-}
-
-# prompt the user to start guessing
-puts "\nIn 3 tries can you figure out the number, between 1 and 10 that I'm thinking of?"
-
-# Ask the user for a guess at least three times
-while(guesses_made < 3)
-	# tell the user how many guesses has has left.
-	print "guesses left #{guesses_left(guesses_made)}: "
-
-	# get the number entered from the user
-	guess = gets.chomp.to_i
-
-	# record that a guess was made
-	guesses_made = increment_guess_count(guesses_made)
-
-	# if the user's number matches the random number
-	if number == guess
-		# tell them they guessed correctly
-		puts messages[:winner]
-		# record that he successfully guessed the answer
-		success=true
-		# stop asking for guesses
-		break;
-	elsif number < guess
-		# if their guess is too high tell them
-		puts messages[:too_high]
-	elsif number > guess
-		# if their guess is too low tell them
+while (count > 0)
+	
+	puts "Make your guess. You have #{guesses_left(increment_guess_count(count))} left. "
+	guess = $stdin.gets.chomp.to_i
+	if (guess == secret_number)
+		puts messages[:win]
+		exit
+	elsif (guess < secret_number)
 		puts messages[:too_low]
+	elsif (guess > secret_number)
+		puts messages[:too_high]
 	end
+	count-=1
+end #while end
+puts "Sorry you lose!"
+exit
 
+#2
 
-end
-
-if(!success)
-	puts messages[:loser] 
-end
 
 
 
@@ -129,25 +103,6 @@ end
 #  
 ################################# Define Door ###################################
 
-class Door
-	attr_accessor :name
-	attr_accessor :locked
-
-	def initialize
-		unlock()
-	end
-	def lock
-		@locked = true
-	end
-	def unlock
-		@locked = false
-	end
-end
-
-back_door = new Door
-back_door.name = "Back Door"
-
-puts back_door.locked
 
 ############# Make 2 doors, front door and back door ############################
 
