@@ -31,3 +31,9 @@
 
 #   Start the Game. 
 
+require './game.rb'
+require './player.rb'
+require './secret_number.rb'
+
+game = Game.new(10, (1..50))
+game.start_game
