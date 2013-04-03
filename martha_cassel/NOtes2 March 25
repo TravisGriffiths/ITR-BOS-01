@@ -1,0 +1,79 @@
+short cuts for command line to navigate computer director
+
+i 		termanal
+cd  	change directory
+li 		list
+mkdir 	make directory
+.		here where i am
+cd .
+cd ..	go back or up
+
+subl my_file.txt 	open a file
+subl my_direcory/
+
+class = noun
+method = verb
+argument = adverb
+
+
+heroku
+schoology
+git
+
+vi another text editor
+text edit
+
+shell scripts
+
+
+#!/usr/bin/ruby					or  ruby ./hello.rb
+# I am a comment				find my interpreter: (which ruby)
+s = " "
+s = string
+s.class
+=> string
+s.methods
+=>
+s.methods.each {|m| puts m}
+s1 = "One"
+s2 = "Two"
+s3 = s1 + " : "  +s2
+=> "One:Two"
+.to_:
+.to_f
+.to_s
+
+
+chmod - +x .1file				to make something executable
+chmod 755 file
+
+
+build a closure
+
+
+
+
+Understand Closures
+C1 = getCounter(1)
+C2 = getConter(45) 
+
+C1() -> 1
+C2() -> 45
+C1() -> 2
+C2() -> 46
+C1() -> 3
+
+function getCounter (x) {
+	varcounterfntion(){
+	
+	}
+
+
+}
+
+------------------------------ March 25, 1013 ----------------------------------
+
+
+
+
+

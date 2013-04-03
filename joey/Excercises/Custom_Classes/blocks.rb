@@ -24,7 +24,7 @@ puts "But only are used by some methods ----------------------------"
 
 a.each {|i| puts "block triggering: #{i}"} #acts on the block passed to it
 
-#The keyword yield invokes the passed block, and may be used in your own methods
+#The keyword yield invokes the passed block, and may be used in your own methods 
 
 puts "\nMathmatics Example-------------------------------------------"
 def mathmatics(a, b)
