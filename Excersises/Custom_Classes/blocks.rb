@@ -14,7 +14,9 @@ puts "Blocks may be passed to anything ----------------------------"
 a = [1, 2, 3]
  #blocks may be passed to any method, but will be silently ignored 
  # by most of them.
-a.push(4) { |i| puts i} # does nothing
+a.push(4) do |i| 
+	puts "I am the puts block #{i}"
+end # does nothing
 
 puts "Showing resulting array a: #{a}"
 
@@ -54,15 +56,15 @@ end
 
 puts "\nMethod block_given? will indicate if a block was passed---------"
 
-def do_things(things)
+def do_things
 	if block_given?
-		yield
+		puts "Has a block, I am ignorning"
 	else
-		puts "Doing #{things}"
+		puts "Doing things"
 	end
 end
 
-do_things("arg stuff") { puts "Doing block things instead. "}
+do_things { puts "Doing block things instead. "}
 
 
 
