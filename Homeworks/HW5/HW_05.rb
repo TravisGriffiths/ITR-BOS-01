@@ -25,11 +25,17 @@
 
 #	Include the Player, SecretNumber, and Game classes
 
+require './game'
+
 
 #   Instantiate a new Game (using your preferred number of guesses, range of numbers)
 
+game = Game.new((1..5), 3)
 
 #   Start the Game. 
+
+game.start_game()
+
 
 ###############################################################################
 # Extra -- take a look at: 
