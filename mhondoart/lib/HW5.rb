@@ -1,8 +1,8 @@
-###############################################################################
-#
-# Introduction to Ruby on Rails
-#
-# Homework 05
+############################################################################### 
+# 
+# Introduction to Ruby on Rails 
+# 
+# Homework 05 
 #
 # Purpose:
 #
@@ -22,23 +22,21 @@
 # Student's Solution
 #
 ###############################################################################
-
 #	Include the Player, SecretNumber, and Game classes
-
-require './game'
-
+#
+# Purpose:
+require "./Player.rb"
+require "./secret_number.rb"
+require "./Game.rb"
 
 #   Instantiate a new Game (using your preferred number of guesses, range of numbers)
 
-game = Game.new((1..5), 3)
+g2=Game.new(3,[1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 #   Start the Game. 
 
-game.start_game()
-
-
+g2.start_game
 ###############################################################################
-# Extra -- take a look at: 
 # http://railscasts.com/episodes/267-coffeescript-basics
 #
 # Coffeescript is a language that compiles to Javascript, but is much simpler, 

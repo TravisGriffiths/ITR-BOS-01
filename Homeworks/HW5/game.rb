@@ -1,4 +1,7 @@
 class Game
+  require './player'
+  require './secret_number'
+
 #	Make sure that all the instance variables in this class may only be READ and not WRITTEN to. 
   attr_reader :guesses_allowed, :current_guess_count, :current_guess
 
@@ -15,17 +18,16 @@ class Game
 	# Creates a new instance of the SecretNumber class and assigns it to the secret_number. Don't forget to pass along the
 	# necessary parameters.
   	# initializes the current guess to nil
-  def initialize(guesses_allowed, set_of_numbers)
-
-
-
+  def initialize(set_of_numbers, guesses_allowed = 3) 
+    @guesses_allowed = guesses_allowed
+    @guess_count = 0
+    @secret = SecretNumber.new(set_of_numbers)
   end
   
 
   # Print who made this wonderful program :-)
   def print_created_by
-
-
+    puts "Travis Griffiths"
   end
   
 
@@ -39,9 +41,22 @@ class Game
 	# If at the end of the loop they still did not guess correctly, tell the player that they have lost using the
 	# `@@messages` class variable and tell them the secret number.
   def start_game
+    print_created_by()
+    puts "\nPlayer Name? "
+    player_name = gets.chomp
+    @player = Player.new(player_name)
 
-
-
+    until(guesses_left == 0)
+      puts "Your Guess: "
+      guess = gets.chomp.to_i
+      if(guess_correct?(guess))
+        puts "You are correct!!, #{guess} is the number!"
+        break
+      else
+        puts "Sorry, #{guess} is not the number."
+      end
+      increment_guess_count()
+    end
 
   end
 
@@ -53,22 +68,19 @@ class Game
 	# Also let the player know how many guesses they have left.
 	# If the guess is correct, make sure to return true, otherwise return false.
   def guess_correct?(guess)
-
-
-
+    @secret.secret_number == guess
   end
 
 
   # This method should increment every time the player guesses incorrectly.
   def increment_guess_count
-    
-    
+    @guess_count += 1
   end
   
 
   # Calculates the guesses the player has left.
   def guesses_left
-  
+    @guesses_allowed - @guess_count
   
   end
 end
