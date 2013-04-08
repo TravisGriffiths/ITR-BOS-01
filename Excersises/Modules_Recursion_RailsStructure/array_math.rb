@@ -37,7 +37,7 @@ module ArrayMath
 	# defined as all of the integers in order before that number all multiplied together
 	# For Example: 3! (3 factorial) is: 1 * 2 * 3 or 6
 	# http://en.wikipedia.org/wiki/Factorial
-	def ArrayMath.factorial(i)
+	def self.factorial(i)
 		################################################################################
 		# In plain English: The factorial of 1 is 1, the factorial of anything larger 
 		# than 1 is the current number times the factorial of the number one less than

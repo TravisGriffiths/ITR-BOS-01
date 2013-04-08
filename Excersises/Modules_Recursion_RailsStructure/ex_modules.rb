@@ -53,3 +53,8 @@ responses[:negative] = [ "Don't count on it", "My reply is no",
 #
 ################################################################################
 
+require './pick_random'
+
+
+puts "Random Response: #{RandomArrayValueFromHash.pick_random_value(responses)}"
+
