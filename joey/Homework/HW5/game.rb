@@ -1,6 +1,4 @@
 class Game
-  require './player'
-  require './secret_number'
 #	Make sure that all the instance variables in this class may only be READ and not WRITTEN to. 
   attr_reader :guesses_allowed, :current_guess_count, :current_guess
 
@@ -21,12 +19,13 @@ class Game
     @guesses_allowed = guesses_allowed
     @guess_count = 0
     @secret = SecretNumber.new(set_of_numbers)
+    @set_of_numbers = set_of_numbers
   end
   
 
   # Print who made this wonderful program :-)
   def print_created_by
-    puts "Joey Parshley"
+    puts "\nThis game created by Joey Parshley\n"
   end
   
 
@@ -41,20 +40,27 @@ class Game
 	# `@@messages` class variable and tell them the secret number.
   def start_game
     print_created_by()
-    puts "\nPlayer Name?"
+    puts "\nWho are we playing with?"
     player_name = gets.chomp()
     @player = Player.new(player_name)
     
     until(guesses_left == 0)
-      puts "Your Guess:"
+      puts "\nPlease pick a number between 1 and 10:"
       guess = gets.chomp.to_i #cast to integer
       if(guess_correct?(guess))
-        puts "You are correct!! #{guess} is the number"
+        puts "\n#{@@messages[:win]}\n#{guess} is the number"
         break
       else
-        puts "Sorry, #{guess} is not the number"
+        if(guess > @secret.secret_number)
+          puts "\nSorry, #{@@messages[:too_high]}"
+        else
+          puts "\nSorry, #{@@messages[:too_low]}"
+        end
       end
       increment_guess_count()
+    end
+    if(!guess_correct?(guess))
+      puts "\nYou are out of guesses\n\nThe secret number is: #{@secret.secret_number}\n#{@@messages[:lose]}\n"
     end
   end
 
