@@ -1,0 +1,19 @@
+Homework 7 for Weds:
+
+Continue your mockups from this weekend, and apply them to at least one of the Views created by your scaffold. Mockups should at this point be moved from Photoshop and wireframes to CSS and HTML. Remember:
+
+1) Each View is a file named after a Controller METHOD
+2) Raw HTML is allowed in a View
+3) Any instance variables (@like_me) created in the corresponding Controller method are in scope in the view.
+4) <% #Ruby code %> tags allow raw Ruby to be interpreted right in the view
+5) <%= @instance_var %> tags allow the Ruby inside to be run and the return value inserted into the document as a string, like " #{var}" string interpolation
+
+
+The official topics for Weds. are supposed to be a long lecture on Routes, Views and Controllers, which I think we have covered pretty well (lecture-wise). I would like to cover the practical parts of these:
+
+1) Creating custom resource routes
+2) Creating Controllers and controller methods
+3) Practice building views
+4) Creating and using helpers 
+
+Please send me email with questions and suggestions of topics related to these that you would like to see in addition.
