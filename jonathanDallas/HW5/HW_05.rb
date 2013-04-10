@@ -24,10 +24,15 @@
 ###############################################################################
 
 #	Include the Player, SecretNumber, and Game classes
+require "./game"
+require "./player"
+require "./secret_number"
 
 
 #   Instantiate a new Game (using your preferred number of guesses, range of numbers)
 
+game = Game.new((1..10),3)
+game.start_game
 
 #   Start the Game. 
 

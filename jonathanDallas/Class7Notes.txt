@@ -1,0 +1,47 @@
+Check out Rails cast.
+
+---
+
+rake routes
+
+shows routes from config/routes.rb
+
+methods in controllers match to file names in views for the same folder
+
+photos_controller.rb => def show ... => views/photos/show.html.erb
+
+use 'match' in your routes to change URLs to point to other locations
+
+--
+
+Modules
+- can contain multiple files
+- creates new namespace Internal::users
+
+module MyNeatModules
+	def MyNeatModules.foo
+
+	end
+
+	def MyNeatModules.bar
+		foo() # doesn't need the namespace to access functions within namespace
+	end
+end
+
+------------------------
+
+factorials
+
+1 * 2 * 3 * etc...  => use recursion
+
+--
+
+.map => updates each value of the array with new data
+fac_array.map { |i| factorial(i.to_i) }
+
+----
+
+helpers => code that can be reused across views
+- modules
+- can contain html and ruby code blocks
+- used to contain code that would otherwise have been put in the view

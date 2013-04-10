@@ -1,0 +1,38 @@
+Exception Handling
+a = [1,2,3]
+begin
+	#some code
+	fetch(5)
+rescue IndexError => msg #Adding the IndexError class is optional
+	#run above code line breaks
+
+	puts "Got Error #{msg}"
+
+else
+	#run if nothing breaks
+ensure
+	#always run this code
+
+end
+
+----
+
+Rails
+
+rails new knobblossom
+
+rails server => starts the app
+http://localhost:3000/
+
+rails generate scaffold Photos file_name:string price:float
+rake db:migrate
+
+each new table in the DB comes with a unique ID column.
+
+ODD - missing attr_accessor is missing from the model (my computer only)
+
+rake routes 
+
+List all photos as JSON
+http://localhost:3000/photos.json
+
