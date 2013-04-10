@@ -52,4 +52,10 @@ responses[:negative] = [ "Don't count on it", "My reply is no",
 # Student's Solution:
 #
 ################################################################################
+require './pick_random'
+# module.method
+puts "Random Response: #{RandomArrayValueFromHash.pick_random_value(responses)}"
+
+
+
 
