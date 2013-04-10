@@ -20,6 +20,9 @@ http://sass-lang.com/
 
 Extra:
 
+Railscasts Installing Bootstap:
+http://railscasts.com/episodes/328-twitter-bootstrap-basics
+
 Railscasts Rails 3 Controllers:
 http://railscasts.com/episodes/224-controllers-in-rails-3?autoplay=true
 
