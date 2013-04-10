@@ -15,16 +15,21 @@ class Game
 	# Creates a new instance of the SecretNumber class and assigns it to the secret_number. Don't forget to pass along the
 	# necessary parameters.
   	# initializes the current guess to nil
-  def initialize(guesses_allowed, set_of_numbers)
+  def initialize(set_of_numbers, guesses_allowed = 3)
+    @current_guess = nil
+    @guesses_allowed = guesses_allowed.to_i
+    @current_guess_count = 0
 
+    @player = Player.new
 
+    @secret_number = SecretNumber.new(set_of_numbers)
 
   end
   
 
   # Print who made this wonderful program :-)
   def print_created_by
-
+    puts "Game created by Jonathan Dallas"
 
   end
   
@@ -39,7 +44,25 @@ class Game
 	# If at the end of the loop they still did not guess correctly, tell the player that they have lost using the
 	# `@@messages` class variable and tell them the secret number.
   def start_game
+    print_created_by()
 
+    print "\nWhat is your name? "
+    @player.name = gets.chomp
+
+    until(guesses_left() == 0)
+      print "\nPlease enter a guess: "
+      @current_guess = gets.chomp.to_i
+
+      increment_guess_count
+
+      if(guess_correct?(@current_guess))
+        puts @@messages.win
+        break
+      else
+        puts "Keep trying, you have #{guesses_left} guesses left"
+      end
+      
+    end
 
 
 
@@ -53,7 +76,11 @@ class Game
 	# Also let the player know how many guesses they have left.
 	# If the guess is correct, make sure to return true, otherwise return false.
   def guess_correct?(guess)
+    if(@secret_number.number == guess)
+      true 
+    end
 
+    false
 
 
   end
@@ -61,14 +88,14 @@ class Game
 
   # This method should increment every time the player guesses incorrectly.
   def increment_guess_count
-    
+    @current_guess_count += 1
     
   end
   
 
   # Calculates the guesses the player has left.
   def guesses_left
-  
+    @guesses_allowed - @current_guess_count
   
   end
 end

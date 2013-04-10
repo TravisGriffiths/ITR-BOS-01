@@ -1,0 +1,31 @@
+What needs to be stored and what attributes per item type 
+
+Contact Page
+- Just HTML form that sends an email
+
+Project Pages
+
+Photos
+- ID - unique number
+- work in progress - boolean
+- file name - String
+- caption - string
+- description - text
+
+rails generate scaffold Photos workinprogress:boolean filename:string caption:string description:text
+
+Project
+- ID - unique number
+- name - String
+- description - text
+- start date - Time
+- end date - Time
+- price - float
+
+rails generate scaffold Projects name:string description:text start_date:timestamp end_date:timestamp price:float
+
+Project Photos
+- Project.ID
+- Photo.ID
+
+rails generate scaffold ProjectPhotos project_id:integer photo_id:integer
