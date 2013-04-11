@@ -1,0 +1,22 @@
+Homework 8
+
+1) Add in as many routes as you can for your Project application
+
+2) Put in the corrisponding Controller methods and Views
+
+3) For now just hard code any instance variables (@instance_variable) needed
+
+4) Insert your CSS into application.css OR build out layouts and alternative
+CSS as needed. 
+
+5) Build out views as possible.
+
+Forms, javascripts and active components don't need to function at this point,
+but feel free to work on getting them working if you like.
+
+6) obtain and save a New York Times Article API key from:
+http://developer.nytimes.com/
+
+Only the Article key is needed (there are MANY)
+
+We will be building a NYT search engine on Monday.
