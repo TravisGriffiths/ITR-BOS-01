@@ -1,0 +1,33 @@
+For those who cannot make it or are attending class remotely on Monday 
+
+These steps will get you started, I will be adding to them before Monday.
+
+Building NYT Article Search App:
+
+1) Build a new application in an available folder.
+		>rails new nyt
+
+2) Add in a root route to article#search
+		root :to => "article#search"
+
+3) Delete public/index.html
+
+NOTE: No Scaffolding!!
+
+4) Build an Article model and controller, remember:
+
+class Article < ActiveRecord::Base
+end
+
+and 
+
+class ArticlesController < ApplicationController
+end
+
+5) Make a search method in each of them
+
+6) copy the Model code given in github (article.rb) and put in your NYT API key
+
+7) Make a search view, add in some html
+
+8) start your server and make sure the root route works and you see your view html
