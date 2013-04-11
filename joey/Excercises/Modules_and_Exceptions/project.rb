@@ -31,11 +31,39 @@
 # Expenses: Expense -> Description as String, Date as Date, Amount as Float
 # Expense belongs to a User
 #
+# 2) Build out a scaffold of one or more of these object using the:
 #
-# Stretch Goal: Start laying out an example page or pages for your project in 
+#    rails generate scaffold Expenses title:string author:string price:float
+#
+#	 command. To review use this video: http://www.youtube.com/watch?v=USfKteP-eVo 
+#    or look here: http://guides.rubyonrails.org/command_line.html
+#    and feel free to search up your own supporting documentation online.
+#		
+# 3) Start laying out an example page or pages for your project in 
 # raw HTML and CSS, make note using comments (<!-- HTML COMMENT -->) of where
 # content currently being filled in as a static example would be dynamic. If 
 # possible, relate these back to your persistant items named in the first part.
 #
+# 4) Stretch Goal: If you can, try to use some of javascript and ajax actions 
+#    we started looking at in class.
+#
 ################################################################################
-
+#
+# Need:   Team    ->  Name as string, Level as string, 
+#
+#                     Team has many players, team has and belongs to many fields, team has and belongs to many games
+#
+#         Player  ->  Name as string, mother as string, father as string, age as integer, batting average as float, position as string,
+#                     hits as integer, wins as integer, losses as integer, strikeouts as integer, hits as integer, walks as integer, 
+#                     Address as string, birthdate as date, user is viewable as boolean
+#
+#                     Player belongs to one team,Player has and belongs to many fields, Player has and belongs to many games 
+#
+#         Field   ->  Name as string, address as string, status as string
+#
+#                     Field has and belongs to many games, Field has and belongs to many players, Field has and belongs to many games
+#
+#         Game    ->  Home team as string, Visting team as string, field as as string, date as date, result as string, umpire as string, 
+#                     hometeam score as integer, visiting team score as integer
+#
+#                     Game has and belongs to many fields, Game has and belongs to many players, Game has and belongs to many teams
