@@ -1,0 +1,15 @@
+<h1>Browsing all our books</h1>
+
+We have a collection of <%= @books.length %>
+<p>
+The first book is: <%= @books.first.title %> 
+</p>
+The books variable is class: <%= @books.class %>
+
+<ul>
+<%- @books.each do |book| -%>
+
+	<li>Book number <%= book.id %> is: <%= book.title %> </li>
+
+<%- end -%>
+</ul>

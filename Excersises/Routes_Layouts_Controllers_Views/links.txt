@@ -18,6 +18,12 @@ http://railscasts.com/episodes/7-all-about-layouts
 SaSS CSS Stylesheets:
 http://sass-lang.com/
 
+Rails Routes Docs:
+http://guides.rubyonrails.org/routing.html
+
+Rails Layout Docs:
+http://guides.rubyonrails.org/layouts_and_rendering.html
+
 Extra:
 
 Railscasts Installing Bootstap:
