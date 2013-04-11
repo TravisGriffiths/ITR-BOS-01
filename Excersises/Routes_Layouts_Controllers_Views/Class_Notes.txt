@@ -1,0 +1,171 @@
+Class Notes:
+
+Topics Covered, Routes, Controller Methods, Views and Layouts
+
+Routes:
+
+resource :controller  -> Creates all the CRUD action routes for :controller
+
+Example:
+Traviss-MacBook-Pro:route_test travisgriffiths$ rake routes    books GET    /books(.:format)          books#index
+          POST   /books(.:format)          books#create
+ new_book GET    /books/new(.:format)      books#new
+edit_book GET    /books/:id/edit(.:format) books#edit
+     book GET    /books/:id(.:format)      books#show
+          PUT    /books/:id(.:format)      books#update
+          DELETE /books/:id(.:format)      books#destroy
+
+
+How to read a ROUTE:
+
+1)edit_book 2)GET    3)/books/:id/edit(.:format) 4)books#edit
+
+1) edit_book is an internal variable that refers to the route. 
+The variable will be named: edit_book_path in this case. This allows
+anchor tags and other route referring helpers to refer to an internal
+value that will change if the route is changed, saving you the 
+work of changing possibly hundreds of anchor tags in all the 
+views of your application. Example of use: 
+<%= link_to 'Text in anchor', edit_book_path %>
+Look at scaffolding views for use examples as well.
+
+2) GET, the HTTP method, either GET, POST, PUT, DELETE, in general
+get requests fetch existing data, POST informs the system of 
+new data, PUT updates existing data, and DELETE removes existing 
+data. These are not hard coded however.
+
+3) /books/:id/edit(.:format)  Example url, symbols, i.e. :id
+are variables that will be added to the params hash. symbolds
+in () are optional, otherwise they are required.
+
+4) books#edit, this is simply controller#method, if a url matches
+the example the controller, (books in this case) will be accessed
+and the edit method used to render the page in question. A matching
+edit.html.erb file will be used as the view to render the page to 
+the browser.
+
+Adding to a resourceful route:
+
+resourceful route additions are either, A) Members, or B) collections
+Members are looking at a single item, almost always a single entry 
+from the database table, while collections are looking at 2+ entries.
+
+  resources :books do
+
+    member do
+      get 'examine'
+    end
+
+    collection do
+      get 'browse'
+    end
+
+  end
+
+ Gives:
+ Traviss-MacBook-Pro:route_test travisgriffiths$ rake routes
+examine_book GET    /books/:id/examine(.:format) books#examine
+browse_books GET    /books/browse(.:format)      books#browse
+       books GET    /books(.:format)             books#index
+             POST   /books(.:format)             books#create
+    new_book GET    /books/new(.:format)         books#new
+   edit_book GET    /books/:id/edit(.:format)    books#edit
+        book GET    /books/:id(.:format)         books#show
+             PUT    /books/:id(.:format)         books#update
+             DELETE /books/:id(.:format)         books#destroy
+
+
+Note that member and collection routes are always additive to the default
+CRUD (Create, Read, Update, Delete) routes in a resource.
+
+Root routes:
+
+Root routes may be defined like so:
+
+  root :to => 'books#landing'
+
+for any 'controller#method'  This creates the route:
+
+ root        /                            books#landing
+
+HOWEVER: if a public/index.html file exists, it always gets precedence
+for http://myapp.com/  requests. Removing the public/index.html will
+then cause the root route to be consulted.
+
+Match Routes:
+
+  match 'widgets/(:price)' => 'books#widgets', :as => 'widgets'
+
+Creates route:
+
+widgets        /widgets/:price(.:format)    books#widgets
+
+so any URL set can be matched back to a controller#method desired.
+Note that :as => 'route_name'  creates the _path internal variable, 
+in this case widgets_path for the purpose of link_to helper and the 
+like. Also the () in 'widgets/(:price)' make :price optional.
+
+For MUCH more information check out the Railscast for Routes:
+http://railscasts.com/episodes/203-routing-in-rails-3
+
+OR the Rails documentation:
+http://guides.rubyonrails.org/routing.html
+
+
+Layouts:
+
+Layouts usually set up the head element, but can also house CSS and
+javascript imports.
+
+Layout rules:
+
+1) Everybody gets app/views/layouts/application.html.erb
+2) If a layout: controller_name.html.erb exists, it is applied
+to all views under that controller.
+3) at the top of a controller the command: layout 'name_of_layout'
+will override rules 1 and 2 and use:
+ app/views/layouts/name_of_layout.html.erb
+4) at the top of controller the command: layout :layout_method
+will call the controller method layout_method allowing any logic
+you want to determine the layout. The method should return a string
+being the name of the layout in the layouts folder. This would 
+override rules 1 and 2, but can only be used INSTEAD of 3, i.e.
+you can only use option 3 OR 4, not both.
+5) For any controller method, the final line can be:
+render :layout 'name_of_layout' to override the layout at the 
+method level. This rule overrides all previous rules.
+
+Example of scaffolded application.html.erb:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RouteTest</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<h1>Application Layout!!</h1>
+
+<%= yield %>
+
+</body>
+</html>
+
+
+Note:  <%= yield %> is required to render the view file.
+Also, <%= stylesheet_link_tag    "application", :media => "all" %>
+injects app/assets/stylesheets/application.css into the head. While, 
+<%= stylesheet_link_tag    "different_style", :media => "all" %>
+injects app/assets/stylesheets/different_style.css into the document
+
+ <%= javascript_include_tag "application" %> does similar things with
+ javascript files.
+
+Rails Layout Docs:
+http://guides.rubyonrails.org/layouts_and_rendering.html
+
+Railscasts Layouts:
+http://railscasts.com/episodes/7-all-about-layouts
