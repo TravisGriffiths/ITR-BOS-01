@@ -15,6 +15,9 @@ http://railscasts.com/episodes/203-routing-in-rails-3
 Railscasts Layouts:
 http://railscasts.com/episodes/7-all-about-layouts
 
+SaSS Basics:
+http://railscasts.com/episodes/268-sass-basics
+
 SaSS CSS Stylesheets:
 http://sass-lang.com/
 

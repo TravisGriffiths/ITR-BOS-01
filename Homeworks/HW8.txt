@@ -20,3 +20,7 @@ http://developer.nytimes.com/
 Only the Article key is needed (there are MANY)
 
 We will be building a NYT search engine on Monday.
+
+Note: I added in some SaSS information to the links. SaSS is the CSS version
+of Coffeescript, being a rather flexible, advanced way to build out stylesheets
+that is included in Rails 3.
