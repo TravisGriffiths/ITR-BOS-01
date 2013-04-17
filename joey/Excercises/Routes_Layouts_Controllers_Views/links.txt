@@ -1,0 +1,30 @@
+Links:
+
+NYT Developer Site for requesting API Key:
+http://developer.nytimes.com/
+
+Ruby HTTP module:
+http://ruby-doc.org/stdlib-2.0/libdoc/net/http/rdoc/Net/HTTP.html
+
+NYT Article API Documentation:
+http://developer.nytimes.com/docs/article_search_api/
+
+Railscasts Routes:
+http://railscasts.com/episodes/203-routing-in-rails-3
+
+Railscasts Layouts:
+http://railscasts.com/episodes/7-all-about-layouts
+
+SaSS CSS Stylesheets:
+http://sass-lang.com/
+
+Extra:
+
+Railscasts Installing Bootstap:
+http://railscasts.com/episodes/328-twitter-bootstrap-basics
+
+Railscasts Rails 3 Controllers:
+http://railscasts.com/episodes/224-controllers-in-rails-3?autoplay=true
+
+Railscasts View Tips:
+http://railscasts.com/episodes/100-5-view-tips?autoplay=true
