@@ -1,0 +1,54 @@
+developer.nytimes.com
+
+Application: Legostud 
+Key: 1078bcd7a410e83de6cee4f3f47f9d0d:19:67540193
+
+Gem for ruby http://balderapp.com/ (photo gallery)
+
+Look at the links provided in GitHub for today's class
+
+--
+
+Building test site
+
+rails generate scaffold ... --no-stylesheets
+
+rake routes
+
+routes.rb
+root :to => 'books#landing'
+
+#used for link_tos
+:as => 'search' 
+
+
+add def landing to book controller
+
+add new landing.html.erb to views/books
+
+Way to see params passed in URL
+<%= params %>
+
+--
+
+layouts under views
+
+looks for the application.css file in app/assests directory
+<%= stylesheet_link_tag    "application", :media => "all" %>
+
+looks for the application.js file in app/assests directory
+<%= javascript_include_tag "application" %>
+
+adding new file that matches the controller will use that layout instead.
+
+or
+
+adding "layout 'application'" to your controller will use that one instead.
+
+or
+"layout :find_layout" looks to a method to get a value (usually a private method)
+Good for logged in verses logged out.
+
+or
+
+use render within a method (render :layout => 'books')
