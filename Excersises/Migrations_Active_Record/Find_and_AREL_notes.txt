@@ -1,0 +1,68 @@
+Find Commands and AREL:
+
+Rails Documentation found here: http://guides.rubyonrails.org/active_record_querying.html
+
+
+1) Simple find
+
+Book.find(3)  #Find and retrieve book record number 3
+
+2) First and Last
+
+# Grab the first or last record
+Book.first
+
+Book.last
+
+3) Simple all
+
+#### !!! NOTE: Will SERIOUSLY stress servers with large tables ####
+
+Book.all #Find and retrieve ALL book records
+
+
+4) Find by attribute
+
+# For any column name Table.find_by_columnname(arg) works
+# Example:
+
+Book.find_by_title('Huck Finn')
+
+5) Find by SQL
+ 
+ #If needed, raw SQL can be used to retrieve records
+ Book.find_by_sql("SELECT 'books'.* FROM 'books' WHERE 'books'.'title' = 'Huck Finn'")
+
+##########  AREL ################
+
+6) Just like in SQL, AREL results can be limited to a set of columns using select
+
+Book.where(:author => "Mark Twain").select(:title) 
+
+7) Where can match any column with a => 
+
+Book.where(:title => "Tom Sawyer")
+
+8) Where can match a range OR an array
+
+Book.where(:id => (3...6))  #Find all books with ids from 3 to 6
+
+Book.where(:id => [3, 4, 5, 9]) #Find all books in the [3, 4, 5, 9] array
+
+9) Where can also take a string for more complicated matching
+
+Book.where('id % 2 == 0') #Find books with even id numbers
+
+10) String where operations can take variables
+
+divisor = 5
+Book.where('id % ? == 0', divisor) #Find books with id number divisible by variable divisor
+
+11) String where operations can take array variables, but need () around the ?
+AND use the IN operator, vice =
+
+record_ids = [7, 4, 6, 23]
+Book.where('id IN (?)', record_ids)
+
+#Same as:
+Book.where(:id => record_ids)
