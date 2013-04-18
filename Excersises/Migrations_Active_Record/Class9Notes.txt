@@ -1,0 +1,110 @@
+rails c to run the console (irb)
+# need to restart if you're changing attr_accessible in models
+
+# 2 is the ID of the object
+Books.find(2)
+
+# find_by_ "column name"
+Book.find_by_title("moby dick") 
+
+# last item added to the object
+Book.last
+
+# first item added to the object
+Book.first
+
+# last resort
+Book.find_by_sql("SQL statement here")
+
+--
+
+# this is better => arel
+Book.where(:ID => 1)
+Book.select(:title).where(:id => 1).where('something else')
+
+# use string if not using => 
+where('id < 3')
+
+--
+
+# add data via the console
+Book.create(:title => 'The Bible')
+
+Book.new(:title => 'huck finn).save!
+
+--
+
+# puts the string or variable into the request (?)
+Book.where('title = ?', "Huck Finn")
+
+--
+
+# use (?) and 'in' for collections (multiple record search)
+Book.where('id in (?)', (2..5))
+# or
+Book.where(id => (2..5))
+
+# stringify allows extra options
+Book.where('id % 2 == 0')
+
+--
+
+# bundle gets all gems in the Gemfile
+# '~>' means at least this revision
+
+--
+
+# creates the models/book.rb
+rails generate model Book
+
+# creates a migration file
+rails g migration add_books_table
+
+# file contains up and down
+# 'up' is a change you want to make
+# 'down' is a way to reverse the change you're currently making
+# 'change' instead if down is obvious to the up
+
+def change
+	# table, column, type
+	add_column :books, :title, :string
+end
+
+rake db:migrate
+
+# Use the "add" and "to" keyword to build the method automatically
+rails g migration add_author_id_to_books author_id:integer
+
+# Use the "remove" and "from" keywords to do the opposite
+
+--
+
+rails g model Author
+
+# in the scheme
+t.column :name, :string
+
+--
+
+# one to many relationships
+# has_many and belongs_to
+# author.rb
+has_many :books
+# books.rb
+belongs_to :author
+
+# has_many though
+
+--
+
+# make data accessible if you want to add to it with console
+# only make just what you want to avoid injection securtiy
+
+--
+
+# Create an other 
+Author.create(:name,'Jonathan')
+
+# Create a book requires assigning it to an author first (has_many)
+Author.find(2).books.create(:title, 'huck finn')
+

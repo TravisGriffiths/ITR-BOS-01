@@ -1,0 +1,9 @@
+Homework 9
+
+You may want to make a copy of your application before doing this.
+
+1) Create all the tables and columns for your project application using migrations
+
+2) Set up any one to one or or one to many associations for your application
+
+3) Build out your models to retrieve desired data sets.

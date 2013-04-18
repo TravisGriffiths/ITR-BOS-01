@@ -1,0 +1,11 @@
+Links for Migrations and Associations:
+
+Migrations:
+http://guides.rubyonrails.org/migrations.html
+
+Associations:
+http://guides.rubyonrails.org/association_basics.html
+
+AREL and Active Record:
+http://guides.rubyonrails.org/active_record_querying.html
+
