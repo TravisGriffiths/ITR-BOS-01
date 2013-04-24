@@ -1,3 +1,7 @@
+Form Helper Link:
+http://guides.rubyonrails.org/form_helpers.html
+
+
 For those who cannot make it or are attending class remotely on Monday 
 
 These steps will get you started, I will be adding to them before Monday.
