@@ -1,0 +1,16 @@
+"The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time."
+
+-Tom Cargill, Bell Labs
+
+
+Try to finish your project. Most of the major elements have been presented, and you should be getting more comfortable at looking up documentation for items that you are not sure about. I am confident that issues will come up as you do this, triggering all sorts of good questions. Email Jon and I any questions that you may have, and also please suggest topics that you are really struggling with, even if we have covered it already. 
+
+A very incomplete list of topics we will still cover:
+
+Validations
+Partials and render, particularly for collections, a.k.a be nice to your designer
+Helpers
+Building application without generators
+Raw javascript forms and Single Page Application (SPA) architecture.
+Users/Validation/Security
+Asset Pipeline
