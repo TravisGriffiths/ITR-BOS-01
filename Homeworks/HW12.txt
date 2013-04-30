@@ -1,0 +1,30 @@
+1) Remove as much logic as possible from all your Views using 
+	A) Helpers
+	B) Partials
+	C) Moving logic into the Controller
+
+Remember that HTML markup should only be present in the Views, Partials or Helpers.
+
+Rails Helper Documentation:
+http://guides.rubyonrails.org/form_helpers.html
+
+Rails Render Documentation:
+http://guides.rubyonrails.org/layouts_and_rendering.html#using-render
+
+Article on 'Skinny' Controllers:
+http://weblog.jamisbuck.org/2006/10/18/skinny-controller-fat-model
+
+2) Hook up User authentication with Devise if appropriate. If your application does not benefit from having users sign on, please take the time to create a small side project using authentication just to practice it.
+
+Devise Documentation:
+http://devise.plataformatec.com.br/
+
+Authentication from Scratch Railscast:
+http://railscasts.com/episodes/250-authentication-from-scratch
+
+Youtube video for setting up Devise:
+http://www.youtube.com/watch?v=AAym7UF6Dr0
+
+3) Put in model validations where appropriate:
+
+http://guides.rubyonrails.org/active_record_validations_callbacks.html
