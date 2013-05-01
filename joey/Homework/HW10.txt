@@ -1,0 +1,5 @@
+Homework 10:
+
+Create and get working at least one rails form in your project. As a stretch goal, you may wish to complete all of them.  Documentation on forms may be found here:
+
+http://guides.rubyonrails.org/form_helpers.html
