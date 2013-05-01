@@ -117,7 +117,9 @@ Books = (function() {
     }
     jQuery('body').trigger('dom:change');
     jQuery("body").on("page:update", function() {
-      return jQuery("#search_box").remove();
+      return jQuery("#search_box").slideUp('slow', function() {
+        return jQuery("#search_box").remove();
+      });
     });
     return jQuery("body").on("books:submit_search", function(e) {
       if (!_.isEmpty(jQuery("#title_search").val())) {

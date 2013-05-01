@@ -87,7 +87,9 @@ class Books
 		jQuery("body").append(layouts["books:search"]) unless jQuery("#search_box").length > 0
 		jQuery('body').trigger('dom:change')
 		jQuery("body").on("page:update", ->
-			jQuery("#search_box").remove()
+			jQuery("#search_box").slideUp('slow', ->
+				jQuery("#search_box").remove()
+			)
 		)
 		jQuery("body").on("books:submit_search", (e) ->
 			unless _.isEmpty(jQuery("#title_search").val())
