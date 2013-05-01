@@ -25,6 +25,7 @@ class Scanner
 	constructor: ->
 		window.layouts = {}
 		window.scanners = @scanners
+		jQuery('body').off()
 		jQuery('body').on('dom:change', ->
 			for key, scan of scanners
 				scan()
@@ -71,6 +72,7 @@ class Books
 		switch method 
 			when 'index' then book_obj.index()
 			when 'search' then book_obj.search()
+			when 'remove' then book_obj.remove()
 
 	index: ->
 		jQuery.get("/books.json", (data) ->
@@ -82,7 +84,7 @@ class Books
 		)
 
 	search: ->
-		jQuery("body").append(layouts["books:search"])
+		jQuery("body").append(layouts["books:search"]) unless jQuery("#search_box").length > 0
 		jQuery('body').trigger('dom:change')
 		jQuery("body").on("page:update", ->
 			jQuery("#search_box").remove()
@@ -94,6 +96,15 @@ class Books
 					result_template = _.template(layouts["books:search_results"])
 					jQuery("#search_box").append(result_template({books: data}))
 				)
+		)
+
+	remove: ->
+		###
+			For PUT or DELETE routes, use POST with an extra _method: 'DELETE'
+			or _method: 'PUT' to get proper routing
+		###
+		jQuery.post("/books/remove", { _method:'DELETE'}, (data, status) ->
+			debugger;
 		)
 
 	layouts: ->
@@ -132,10 +143,15 @@ class Books
 		{
 			key: 'books',
 			scanner: ->
+				jQuery("#add_book").off()
 				jQuery("#add_book").click( -> jQuery('body').trigger('books:add'))
+				jQuery("#edit_book").off()
 				jQuery("#edit_book").click( -> jQuery('body').trigger('books:edit'))
+				jQuery("#remove_book").off()
 				jQuery("#remove_book").click( -> jQuery('body').trigger('books:remove'))
+				jQuery("#search_book").off()
 				jQuery("#search_book").click( -> jQuery('body').trigger('books:search'))
+				jQuery("#submit_search").off()
 				jQuery("#submit_search").click( -> jQuery('body').trigger('books:submit_search'))
 		}
 

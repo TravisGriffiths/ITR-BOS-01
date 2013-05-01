@@ -17,6 +17,7 @@ Scanner = (function() {
   function Scanner() {
     window.layouts = {};
     window.scanners = this.scanners;
+    jQuery('body').off();
     jQuery('body').on('dom:change', function() {
       var key, scan, _results;
       _results = [];
@@ -94,6 +95,8 @@ Books = (function() {
         return book_obj.index();
       case 'search':
         return book_obj.search();
+      case 'remove':
+        return book_obj.remove();
     }
   };
 
@@ -109,7 +112,9 @@ Books = (function() {
   };
 
   Books.prototype.search = function() {
-    jQuery("body").append(layouts["books:search"]);
+    if (!(jQuery("#search_box").length > 0)) {
+      jQuery("body").append(layouts["books:search"]);
+    }
     jQuery('body').trigger('dom:change');
     jQuery("body").on("page:update", function() {
       return jQuery("#search_box").remove();
@@ -130,6 +135,18 @@ Books = (function() {
     });
   };
 
+  Books.prototype.remove = function() {
+    /*
+    			For PUT or DELETE routes, use POST with an extra _method: 'DELETE'
+    			or _method: 'PUT' to get proper routing
+    */
+    return jQuery.post("/books/remove", {
+      _method: 'DELETE'
+    }, function(data, status) {
+      debugger;
+    });
+  };
+
   Books.prototype.layouts = function() {
     layouts['books:index'] = "<h1>Book Index</h1>\n<ul>\n <% _.each(books, function(book) { %>\n 	 <li id=\"book_id_<%= book.id %>\" > <%= book.title %></li> \n <%})%>\n</ul>\n\n<p></p>\n<span id='add_book' class='button'>Add Book</span>\n<span id='edit_book' class='button'>Edit Book</span>\n<span id='remove_book' class='button'>Remove Book</span>\n<span id='search_book' class='button'>Search Books</span>";
     layouts['books:search'] = "<div id='search_box'>\n	<h3>Search Books by Title:</h3>\n	<input type=\"text\" id=\"title_search\">\n	<span class='button' id='submit_search'>Search Titles</span>\n</div>";
@@ -140,18 +157,23 @@ Books = (function() {
     return {
       key: 'books',
       scanner: function() {
+        jQuery("#add_book").off();
         jQuery("#add_book").click(function() {
           return jQuery('body').trigger('books:add');
         });
+        jQuery("#edit_book").off();
         jQuery("#edit_book").click(function() {
           return jQuery('body').trigger('books:edit');
         });
+        jQuery("#remove_book").off();
         jQuery("#remove_book").click(function() {
           return jQuery('body').trigger('books:remove');
         });
+        jQuery("#search_book").off();
         jQuery("#search_book").click(function() {
           return jQuery('body').trigger('books:search');
         });
+        jQuery("#submit_search").off();
         return jQuery("#submit_search").click(function() {
           return jQuery('body').trigger('books:submit_search');
         });

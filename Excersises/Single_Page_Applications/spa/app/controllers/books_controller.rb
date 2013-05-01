@@ -90,4 +90,18 @@ class BooksController < ApplicationController
       format.json { render json: @search_results }
     end
   end
+
+  def remove
+      @removal = [{:message => "Did Remove"}]
+      respond_to do |format|
+        format.json { render json: @removal }
+      end
+  end
+
+  def stuff
+      @stuff = "Did Stuff"
+      respond_to do |format|
+        format.json { render json: @stuff }
+      end
+  end
 end

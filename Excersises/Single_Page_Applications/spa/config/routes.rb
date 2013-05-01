@@ -5,6 +5,8 @@ Spa::Application.routes.draw do
   resources :books do
     collection do
       get 'search'
+      delete 'remove'
+      put 'stuff'
     end
   end
 
