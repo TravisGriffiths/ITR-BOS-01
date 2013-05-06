@@ -1,0 +1,12 @@
+gem 'awesome_print'
+
+
+ group :test, :development do
+	  gem "rspec-rails", "~> 2.0"
+end
+
+group :development do
+  gem "better_errors"
+end
+
+gem 'debugger'
