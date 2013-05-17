@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @appointment.name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @appointment.date %>
+</p>
+
+<p>
+  <b>Starttime:</b>
+  <%= @appointment.starttime.strftime("%l:%M %p") %>
+</p>
+
+<p>
+  <b>Endtime:</b>
+  <%= @appointment.endtime.strftime("%l:%M %p") %>
+</p>
+
+<p>
+  <b>Person:</b>
+  <%= User.find(@appointment.user_id).person %>
+</p>
+
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>
