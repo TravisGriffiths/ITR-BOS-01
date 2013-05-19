@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Artname:</b>
+  <%= @art.artname %>
+</p>
+
+<p>
+  <b>Artpath:</b>
+  <%= @art.artpath %>
+</p>
+
+<p>
+  <b>Artprice:</b>
+  <%= @art.artprice %>
+</p>
+
+<p>
+  <b>Mediatype:</b>
+  <%= @art.mediatype %>
+</p>
+
+<p>
+  <b>Artsize:</b>
+  <%= @art.artsize %>
+</p>
+
+<p>
+  <b>Metadata:</b>
+  <%= @art.metadata %>
+</p>
+
+
+<%= link_to 'Edit', edit_art_path(@art) %> |
+<%= link_to 'Back', arts_path %>

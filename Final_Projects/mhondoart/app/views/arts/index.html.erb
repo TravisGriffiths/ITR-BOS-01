@@ -1,0 +1,38 @@
+<div class="row">
+        <div class="span9"> 
+<h1>Listing arts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Mediatype</th>
+    <th>Dimensions</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @arts.each do |art| %>
+  <tr>
+    <td><%= art.artname %>
+    <td><%= art.artprice %></td>
+    <td><%= art.mediatype %></td>
+    <td><%= art.artsize %></td>
+    <td class="actions"> 
+        <%= link_to 'Show', art %>
+        <%= link_to 'Edit', edit_art_path(art) %>
+        <%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Art', new_art_path %>
+ </div>
+        <div class="span3"> 
+            <h2>Thumbnail</h2>
+            <%=image_tag (@arts.first.artname)%></div>
+    </div>

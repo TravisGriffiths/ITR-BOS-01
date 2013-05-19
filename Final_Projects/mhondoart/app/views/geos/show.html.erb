@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Countryname:</b>
+  <%= @geo.CountryName %>
+</p>
+
+<p>
+  <b>Cityname:</b>
+  <%= @geo.CityName %>
+</p>
+
+<p>
+  <b>Countryid:</b>
+  <%= @geo.CountryId %>
+</p>
+
+
+<%= link_to 'Edit', edit_geo_path(@geo) %> |
+<%= link_to 'Back', geos_path %>

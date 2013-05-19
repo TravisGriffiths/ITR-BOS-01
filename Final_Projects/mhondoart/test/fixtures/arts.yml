@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  artname: MyString
+  artpath: MyString
+  artprice: 1.5
+  mediatype: MyString
+  artsize: MyString
+  metadata: MyText
+
+two:
+  artname: MyString
+  artpath: MyString
+  artprice: 1.5
+  mediatype: MyString
+  artsize: MyString
+  metadata: MyText
