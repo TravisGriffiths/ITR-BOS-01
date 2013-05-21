@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @school.name %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @school.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @school.longitude %>
+</p>
+
+<p>
+  <b>Wins:</b>
+  <%= @school.wins %>
+</p>
+
+<p>
+  <b>Losses:</b>
+  <%= @school.losses %>
+</p>
+
+<p>
+  <b>Gmaps:</b>
+  <%= @school.gmaps %>
+</p>
+
+<p>
+  <b>League:</b>
+  <%= @school.league %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @school.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to 'Back', schools_path %>

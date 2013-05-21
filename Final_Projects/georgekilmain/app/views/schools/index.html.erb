@@ -1,0 +1,106 @@
+<div id="user_nav">
+	<% if current_user %>
+	<span id="logged_in_message">logged in as <%= current_user.email %></span><%= link_to "Admin Panel", admin_panel_path, {:class => "log_button"} %>
+	<%= link_to "Log Out", log_out_path, {:class => "log_button"} %>
+	<% else %>
+	<%= link_to "Sign Up", sign_up_path, {:class => "log_button"} %>
+	<%= link_to "Log In", log_in_path, {:class => "log_button"} %>
+	<% end %>
+</div>
+
+<div id="about_box">
+<h1>Football Mapper</h1>
+<p>Football Mapper gives users a fun yet efficient way to interact with high school football data.</p><p> Using our map filters, users can run their own unique query and see the result displayed as a map. Data points will increase as the season gets underway so there will always be something new</a>!  
+</p>
+</div>
+
+<div id="filter_wrapper">
+	<!--League filter-->	
+	<div class="filter_box">
+		<h3 class="filter_title">Leagues Filter</h3>
+		<div class="data" id="league_filter">
+			<input type="checkbox" id="atlanticcoastal" />
+			<p>Atlantic Coastal</p>
+			<div class="break"></div>
+			<input type="checkbox" checked="checked" id="baystate" />
+			<p>Bay State</p>
+			<div class="break"></div>
+			<input type="checkbox" id="bigthree" />
+			<p>Big Three</p>
+			<div class="break"></div>
+			<input type="checkbox" id="capeann" />
+			<p>Cape Ann</p>
+			<div class="break"></div>
+			<input type="checkbox" id="catholic" />
+			<p>Catholic</p>
+			<div class="break"></div>
+			<input type="checkbox" checked="checked" id="dualcounty" />
+			<p>Dual County</p>
+			<div class="break"></div>
+			<input type="checkbox" id="greaterboston" />
+			<p>Greater Boston</p>
+			<div class="break"></div>
+			<input type="checkbox" id="hockomock" />
+			<p>Hockomock</p>
+			<div class="break"></div>
+			<input type="checkbox" id="merrimack" />
+			<p>Merrimack</p>
+			<div class="break"></div>
+			<input type="checkbox" checked="checked" id="middlesex" />
+			<p>Middlesex</p>
+			<div class="break"></div>
+		</div><!--data-->
+	</div><!--league filter-->
+	<div class="break"></div>
+	<!--player filter-->
+	<div class="filter_box">
+		<h3 class="filter_title">Player Filter</h3>
+		<div class="data" id="player_filter">
+			<h6 class="filter_title">Averages (checkboxes disabled)</h6>
+			<input type="checkbox" />
+			<p>100 yds rush</p>
+			<div class="break"></div>
+			<input type="checkbox" />
+			<p>300 yds pass</p>
+			<div class="break"></div>
+			<input type="checkbox" id="highly_recruited" />
+			<p>Highly Recruited</p>
+		</div><!--data-->
+	</div><!--player filter-->
+	<div class="break"></div>
+
+	<div class="filter_box">
+		<h3 class="filter_title">Team Filter</h3>	
+		<div class="data" id="team_filter">
+			<div>(checkboxes disabled)</div>
+			<input id="30points" type="checkbox" />
+			<label for="30points">
+			<p>30+ Points</p>
+			</label>
+			<div class="break"></div>
+			<input type="checkbox" />
+			<p>Winning Streak</p>
+			<div class="break"></div>
+			<h6>Game Details</h6>
+			<input type="checkbox" />
+			<p>Big Game</p>
+			<div class="break"></div>
+			<input type="checkbox" />
+			<p>Rivalry Game</p>
+		</div><!--data-->
+	</div><!--team filter-->
+	<div class="break"></div>
+</div><!--filter wrapper-->
+
+<%= gmaps4rails(@json) %>
+gmaps({ :direction => {
+                      :data => { :from => @map.origin, :to => @map.destination}
+                      }
+     })
+<script type="text/javascript">
+$(document).ready(function() {
+Gmaps.map.callback = function() {
+console.log(Gmaps.map.markers)
+}
+});
+</script>

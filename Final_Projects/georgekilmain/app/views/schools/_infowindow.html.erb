@@ -1,0 +1,22 @@
+<!--header shows team name, wins, losses, and has a directions link-->
+<!--TODO activate direction link-->
+<div id="header">
+	<div class="headerContent"><%= school.name %> |</div> 
+	<div class="headerContent"><%= school.wins %> &#8211; <%= school.losses%> |</div>
+	<div class="headerContent"><a href="#">Directions</a></div>
+	<div class="break" />
+</div>
+<!--main contains the advertiser box and the content box-->
+	<div id="contentBox"><p>Preview: <%= school.content %></p></div>
+	<div id="advert_box">
+		<% if school.advertisers.first %> 
+		<%= school.advertisers.first.business_name %> <br />
+		<%= school.advertisers.first.advertisement %><br />
+		<%= school.advertisers.first.url %>
+		<% else %>
+		"nil"
+		<% end %>
+	</div>
+	<div id="footer">
+	<p>see something wrong? Have a comment? <a href="#contact">Contact</a></p>
+</div>

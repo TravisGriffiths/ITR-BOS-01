@@ -1,0 +1,83 @@
+<div id="container">
+  <div id="wrapper"> 
+    <h1>Advertise on Football Mapper</h1>
+
+    <div id="left_column">
+      <%= form_for(@advertiser) do |f| %>
+  <% if @advertiser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@advertiser.errors.count, "error") %> prohibited this advertiser from being saved:</h2>
+
+      <ul>
+      <% @advertiser.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contact_name %><br />
+    <%= f.text_field :contact_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :business_name %><br />
+    <%= f.text_field :business_name %>
+  </div>
+  <div class="field">
+    <%= f.label :street %><br />
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %><br />
+    <%= f.text_field :zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :advertisement %><br />
+    <%= f.text_field :advertisement %>
+  </div>
+  <div class="field">
+    <%= f.label :school_id %><br />
+    <%= f.text_field :school_id %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div><!--left column-->
+<div id="right_column">
+
+<p><b>Not into forms?</b> Call me directly: George (617) 501-5212</p>
+<p><b>What is this form?</b> So that you can create an account to advertise on Football Mapper. Fill it out, submit it, and begin your advertisement campaign!</p>
+<p><b>Who uses Football Mapper?</b> Players, parents, scouts, and referees all use Football Mapper.</p>
+<p><b>What is a benefit to advertising?</b> Advertising on Football Mapper is an excellent way to reach new visitors to your area.</p>
+<p><b>We do not just 'set and forget' your ad.</b> We encourage you to change your ad lingo often so that your content is always fresh.Your advertisment will contain your business name, a description of your advertisement, and a link to your website. Your advertisement will be placed prominently at the bottom of an infowindow tab.</p>
+<p><b>There are many additional benefits to advertising on Football Mapper.</b> Fill out the form or call me and lets have a chat!</p>
+</div>
+</div><!--wrapper-->
+</div><!--container-->

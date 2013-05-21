@@ -1,0 +1,85 @@
+<div id="container">
+  <div id="wrapper">
+    <header>
+      <h1>Admin Panel for <%= current_user.business_name %> <%= link_to "Log Out", log_out_path, {:class => "log_button"} %> <%= link_to "Show Map", root_url, {:class => "log_button"} %></h1>
+      <h3>Welcome, <%= current_user.contact_name %>, you are logged in as <%= current_user.email %> </h3>
+      <div id="address">
+        <h3><%= current_user.business_name %></h3>
+        <p><%= current_user.street %></p>
+        <p><%= current_user.city %>, <%= current_user.state %> <%= current_user.zipcode %></p>
+        <p><%= current_user.url %></p>
+      </div>
+    </header>
+
+    <div id="admin_wrapper">
+    <div id="admin_description">
+    <section>
+      <article>
+        <p>The Admin Panel is where you can change your advertisement which appears on your town marker. <!--TODO put in town association here--> You can change your advertisement as many times as you'd like. <b>Relevant, targeted advertising</b> will give you the most bang for your advertisement. For instance:</p>
+      </article>
+      <aside>
+        <ul>
+          <li> GOOD:$2 slices from 10-2 on gameday.</li>
+          <li> BETTER: $2 slices all day if the Raiders beat the Rockets this Saturday!</li>
+        </ul>
+      </aside>
+      <article>
+        <p><b>Update your ad often. Find what works. Rinse. Repeat.</b></p>
+      </article>
+    </section>
+  </div>
+  <div id="admin_data">
+    <section>
+        
+        <p>Record for <%= @school.name %></p>
+        
+        <p>Upcoming Schdule for <%= @school.name %> (shows next 4 games):</p>
+        <ul>
+          <li>mm/dd | home/away | opponent</li>
+          <li>mm/dd | home/away | opponent</li>
+          <li>mm/dd | home/away | opponent</li>
+          <li>mm/dd | home/away | opponent</li>
+        </ul>
+    </section>
+  </div>
+  <div class="break"></div>
+</div><!--admin wrapper-->
+
+    <div id="advertisement_wrapper">
+    <section>
+      <article>
+        <div id="current_advertisement">
+        <h3>Current Advertisement</h3>
+        <div class="ad">
+        <p><b><%= current_user.business_name%></b></p>
+        <p><%= current_user.advertisement %></p>
+        <a><%= current_user.url %></a>
+      </div>
+            <h3>Update Advertisement</h3>
+            <%= form_for current_user do |f| %>
+              <p>
+                <%= f.text_field :advertisement, :value => "" %>
+              </p>
+              <p>See your new ad on the right? If you like how it looks, click UPDATE.</p>
+
+              <p class="button"><%= f.submit :value => "Update", :title => "If you make a mistake, DON'T WORRY. Just log back in and change your advertisement." %></p>
+            <% end %>
+          </div><!--current advertisement-->
+        
+          <aside>
+             <div id="sample_advertisement">
+              <h3>Your ad will look like:</h3>
+              <div class="ad"><p class="advertiser_business_name"><b><%= current_user.business_name %></b></p>
+              <p class="advertiser_advertisement"></p>
+              <a class="advertiser_url" style="color: #000099; text-decoration: underline"><%= current_user.url %></a>
+            </div>
+          </div>
+          </aside>
+          <div class="break"></div>
+      </article>
+    </section>
+  </div>
+
+
+</div><!--wrapper-->
+</div><!--container-->

@@ -1,0 +1,43 @@
+<h1>Listing advertisers</h1>
+
+<table>
+  <tr>
+    <th>Business name</th>
+    <th>Url</th>
+    <th>Advertisement</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+    <th>Email</th>
+    <th>Password salt</th>
+    <th>Password hash</th>
+    <th>Contact name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @advertisers.each do |advertiser| %>
+  <tr>
+    <td><%= advertiser.business_name %></td>
+    <td><%= advertiser.url %></td>
+    <td><%= advertiser.advertisement %></td>
+    <td><%= advertiser.street %></td>
+    <td><%= advertiser.city %></td>
+    <td><%= advertiser.state %></td>
+    <td><%= advertiser.zipcode %></td>
+    <td><%= advertiser.email %></td>
+    <td><%= advertiser.password_salt %></td>
+    <td><%= advertiser.password_hash %></td>
+    <td><%= advertiser.contact_name %></td>
+    <td><%= link_to 'Show', advertiser %></td>
+    <td><%= link_to 'Edit', edit_advertiser_path(advertiser) %></td>
+    <td><%= link_to 'Destroy', advertiser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Advertiser', new_advertiser_path %>
